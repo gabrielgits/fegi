@@ -28,9 +28,9 @@ FEGI is designed for everyone who wants to efficiently configure their environme
 Just download the setup file from the link above and run it.
 
 <p align="center">
-<a align="center"><img width="auto" src="./assets/images/install/windows.png" /></a>
-<a align="center"><img width="auto" height="225" src="./assets/images/install/mac.png" /></a>
-<a align="center"><img width="auto" height="225" src="./assets/images/install/linux.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/setup_win.png" /></a>
+<a align="center"><img width="450" height="400"  src="./setup/setup_mac.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/setup_linux.png" /></a>
 </p>
 
 
@@ -39,9 +39,9 @@ Just download the setup file from the link above and run it.
 Just download the setup file from the link above and run it.
 
 <p align="center">
-<a align="center"><img width="auto" src="./assets/images/install/windows.png" /></a>
-<a align="center"><img width="auto" height="225" src="./assets/images/install/mac.png" /></a>
-<a align="center"><img width="auto" height="225" src="./assets/images/install/linux.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/use_win.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/setup_mac.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/setup_linux.png" /></a>
 </p>
 
 ## Features
@@ -79,27 +79,27 @@ $ flutter pub get
 
 This APP has the following dependencies:
 
-- [flutter: Main sdk.](https://flutter.dev/)
+- [flutter](https://flutter.dev/): Main sdk.
 
 ### ui:
-- [bform: Form UI components.](https://pub.dev/packages/bform)
+- [bform](https://pub.dev/packages/bform): Form UI components.
 
 ### utils:
-- [easy_localization: Localization and Internationalization.](https://pub.dev/packages/easy_localization)
-- [upgrader: Self update or update verify.](https://pub.dev/packages/upgrader)
-- [equatable: Being able to compare objects without override the == operator as well as hashCode.](https://pub.dev/packages/equatable)
-- [archive: Extract zip file and compress folder or file.](https://pub.dev/packages/archive)
-- [window_manager: Resizing and repositioning the window.](https://pub.dev/packages/window_manager)
- [win32_registry: Provides a friendly Dart API for accessing the Windows registry.](https://pub.dev/packages/win32_registry)
+- [easy_localization](https://pub.dev/packages/easy_localization): Localization and Internationalization.
+- [upgrader](https://pub.dev/packages/upgrader): Self update or update verify.
+- [equatable](https://pub.dev/packages/equatable): Being able to compare objects without override the == operator as well as hashCode.
+- [archive](https://pub.dev/packages/archive): Extract zip file and compress folder or file.
+- [window_manager](https://pub.dev/packages/window_manager): Resizing and repositioning the window.
+ [win32_registry](https://pub.dev/packages/win32_registry): Provides a friendly Dart API for accessing the Windows registry.
 
 ### state management:
-- [provider: A wrapper around InheritedWidget to make them easier to use and more reusable.](https://pub.dev/packages/provider)
+- [provider](https://pub.dev/packages/provider): A wrapper around InheritedWidget to make them easier to use and more reusable.
 
 ### networking and storage:
-- [dio: A powerful HTTP client which FormData, request cancellation, file uploading/downloading, etc.](https://pub.dev/packages/dio)
-- [shared_preferences: Storing data quickly.](https://pub.dev/packages/shared_preferences)
-- [path_provider: Finding commonly used locations on the filesystem.](https://pub.dev/packages/path_provider)
-- [system_tray: Support for system tray menu for desktop flutter apps. on Windows, macOS, and Linux.](https://pub.dev/packages/system_tray)
+- [dio](https://pub.dev/packages/dio): A powerful HTTP client which FormData, request cancellation, file uploading/downloading, etc.
+- [shared_preferences](https://pub.dev/packages/shared_preferences): Storing data quickly.
+- [path_provider](https://pub.dev/packages/path_provider): Finding commonly used locations on the filesystem.
+- [system_tray](https://pub.dev/packages/system_tray): Support for system tray menu for desktop flutter apps. on Windows, macOS, and Linux.
 
 
 ## Technical aspects
