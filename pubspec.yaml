@@ -12,9 +12,7 @@ dependencies:
 
   #ui:
   bform:
-    git: 
-      url: https://github.com/gabrielgits/bform.git
-      ref: dev
+    git: https://github.com/gabrielgits/bform.git
 
   #utils:
   easy_localization: ^3.0.1

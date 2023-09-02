@@ -45,8 +45,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: dev
-      resolved-ref: "6d920b901476ce2e31dbd510a5f8933c6309d80b"
+      ref: HEAD
+      resolved-ref: "71adb55af49e731e6cd47c5e2c3244277f20469b"
       url: "https://github.com/gabrielgits/bform.git"
     source: git
     version: "0.3.6"
