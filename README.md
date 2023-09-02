@@ -16,7 +16,7 @@ FEGI is designed for everyone who wants to efficiently configure their environme
     <strong>Available platforms</strong>
     <br />
     <div>
-    <a href="setup/fegi-setup-win.exe"><img width="15px" src="./assets/images/icons/platforms/windows.png">&nbsp;<label>Windows&nbsp;&nbsp;</label></a>
+    <a href="https://github.com/gabrielgits/fegi/raw/main/setup/fegi-setup-win.exe"><img width="15px" src="./assets/images/icons/platforms/windows.png">&nbsp;<label>Windows&nbsp;&nbsp;</label></a>
     <img width="15px" src="./assets/images/icons/platforms/mac.png">&nbsp;<label>Mac OS X&nbsp;&nbsp;</label>
     <img width="15px" src="./assets/images/icons/platforms/linux.png">&nbsp;<label>Linux</label>
     </div>
