@@ -1,0 +1,82 @@
+{
+  "msn": {
+    "welcome": "Welcome to Flutter Easy GUI Installer.\n We are here to help you setup everything.",
+    "noConfig": "It appears that there is no configuration on your system.\nHowever, this isn't the end, you can:",
+    "finishConfig": "You sucessfully configured FEGI.\nFlutter Sdk is now installed and ready to use.",
+    "finishConfig2": "You can add as many Flutter Sdk Releases as you want.",
+    "suggestions": "Here are some Flutter Sdk Releases suggestions to help you get started:",
+    "error": "Houston, we have a problem.",
+    "downloading": "Downloading Sdk Release {version}. This may take a while...",
+    "installing": "Installing Sdk Release {version}. please wait...",
+    "uninstalling": "Uninstalling Sdk Release {version}. please wait...",
+    "deleting": "Deleting {version} Release. please wait...",
+    "importing": "Importing Releases. please wait...",
+    "removing": "Removing {version} Release. please wait...",
+    "loadingList": "Loading all Releases. please wait...",
+    "settingGlobal": "Setting Sdk Release {version} as Global. please wait...",
+    "finishApp": "End Application",
+    "closeWindow": "You can minimize FEGI as system tray icon.\nAre you sure you want to close?",
+    "noSdk": "You don't have any Sdk Releases installed.\n Use the button 'Get Sdk',\n to install one of the Flutter Sdk.",
+    "infoCanNotRemove": "You can't remove the Sdk Release {version}, because it's installed."
+  },
+  "btn": {
+    "receive": "Receive",
+    "send": "Send",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "get": "Get",
+    "submit": "Submit",
+    "restart": "Restart",
+    "search": "Search",
+    "cancel": "Cancel",
+    "default": "Default",
+    "skip": "Skip",
+    "install": "Install",
+    "uninstall": "Uninstall",
+    "globalset": "Set as Global",
+    "globalremove": "Remove as Global",
+    "delete": "Delete",
+    "download": "Download",
+    "remove": "Remove",
+    "close": "Close",
+    "save": "Save"
+  },
+  "home": {
+    "settings": "Settings",
+    "configNow": "Configure Now",
+    "downloadAll": "Download All",
+    "deleteAll": "Delete All",
+    "getSdk": "Get Sdk",
+    "sdkVersion": "Version",
+    "sdkArchitecture": "Architecture",
+    "releaseDate": "Date",
+    "dartVersion": "Dart Version",
+    "options": "Options",
+    "closeWindow": "Close Window"
+  },
+  "settings": {
+    "title": "Settings",
+    "runStartup": "Run when system startup",
+    "startupMinimized": "Run minimized on startup",
+    "languages": "Languages",
+    "editors": "Default Editors",
+    "projectsFolder": "Projects Folder",
+    "updating": "Updating Settings",
+    "setdefault": "Updating Settings to Default",
+    "loading": "Loading Settings"
+  },
+  "startup": {
+    "title": "Initial Settings",
+    "begin": "Let's Get Started",
+    "finish": "Finish"
+  },
+
+  "tray": {
+    "restoure": "Restore",
+    "global": "Global",
+    "releases": "Releases",
+    "version": "Version",
+    "exit": "Exit"
+  }
+}

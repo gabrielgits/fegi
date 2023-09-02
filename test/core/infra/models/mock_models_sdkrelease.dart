@@ -1,0 +1,66 @@
+import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
+import 'package:fegi/core/states/sdk_state.dart';
+
+const mockModelSdkRelease = SdkReleaseModel(
+  id: 1,
+  version: '3.0.0',
+  architecture: 'x64',
+  date: '12/12/2022',
+  dartVersion: '2.10.0',
+  state: SdkState.available,
+  changeLog: 'Update dart for version 2.10.0',
+  link: 'stable/windows/flutter_windows_3.0.0-stable.zip',
+  file: 'flutter_windows_3.0.0-stable.zip',
+  channel: 'stable',
+);
+
+const mockListModelSdkRelease = [
+  SdkReleaseModel(
+    id: 1,
+    version: '1.0.0',
+    architecture: 'x64',
+    date: '12/12/2022',
+    dartVersion: '0.10.0',
+    state: SdkState.available,
+    changeLog: 'Update dart for version 2.10.0',
+    link: 'https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.0.0-stable.zip',
+    file: 'flutter_windows_3.0.0-stable.zip',
+    channel: 'stable',
+  ),
+  SdkReleaseModel(
+    id: 2,
+    version: '2.0.0',
+    architecture: 'x64',
+    date: '12/12/2021',
+    dartVersion: '1.10.0',
+    state: SdkState.downloaded,
+    changeLog: 'Update dart for version 2.10.0',
+    link: 'https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.0.0-stable.zip',
+    file: 'flutter_windows_2.0.0-stable.zip',
+    channel: 'stable',
+  ),
+  SdkReleaseModel(
+    id: 3,
+    version: '3.0.0',
+    architecture: 'x64',
+    date: '12/12/2020',
+    dartVersion: '2.10.0',
+    state: SdkState.installed,
+    changeLog: 'Update dart for version 2.10.0',
+    link: 'https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_1.0.0-stable.zip',
+    file: 'flutter_windows_1.0.0-stable.zip',
+    channel: 'stable',
+  ),
+  SdkReleaseModel(
+    id: 4,
+    version: '4.0.0',
+    architecture: 'x64',
+    date: '12/12/2020',
+    dartVersion: '3.10.0',
+    state: SdkState.global,
+    changeLog: 'Update dart for version 2.10.0',
+    link: 'https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_1.0.0-stable.zip',
+    file: 'flutter_windows_1.0.0-stable.zip',
+    channel: 'stable',
+  ),
+];

@@ -1,0 +1,65 @@
+name: fegi
+description: Flutter Easy GUI Installer
+homepage: https://github.com/gabrielgits/fegi
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 0.1.0+1
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #ui:
+  bform:
+    git: 
+      url: https://github.com/gabrielgits/bform.git
+      ref: dev
+
+  #utils:
+  easy_localization: ^3.0.1
+  upgrader: ^7.1.0
+  url_launcher: ^6.1.5
+  equatable: ^2.0.5
+  archive: ^3.3.7
+  window_manager: ^0.3.5
+  system_tray: ^2.0.3
+  win32_registry: ^1.1.1
+
+  #state management:
+  provider: ^6.0.5
+
+  #networking and storage:
+  dio: ^5.3.0
+  shared_preferences: ^2.2.0
+  path_provider: ^2.0.15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  mockito: ^5.4.2
+
+flutter:
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/languages/
+    - assets/images/icons/
+    - assets/images/flags/
+    - assets/images/editors/
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https:

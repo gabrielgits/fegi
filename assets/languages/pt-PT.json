@@ -1,0 +1,79 @@
+{
+  "msn": {
+    "welcome": "Bem vindo ao Flutter Easy GUI Installer.\n Estamos aqui para ajudar você a configurar tudo.",
+    "noConfig": "Tudo indica que não há configuração no seu sistema.\nNo entanto, isso não é o fim, você pode:",
+    "finishConfig": "Você configurou FEGI com sucesso.\nkFlutter Sdk está instaladas e pronta para uso.",
+    "finishConfig2": "Você pode adicionar vários Sdk Releases como desejar.",
+    "suggestions": "Aqui estão algumas sugestões de Sdk Releases para ajudar você a começar:",
+    "error": "Houston, temos um problema.",
+    "downloading": "Baixando Sdk Release {version}. Isso pode demorar...",
+    "installing": "Instalando Sdk Release {version}. Aguarde...",
+    "uninstalling": "Desinstalando Sdk Release {version}. Aguarde...",
+    "deleting": "Deletando {version} Release. Aguarde...",
+    "importing": "Importando Releases. Aguarde...",
+    "removing": "Removendo {version} Release. Aguarde...",
+    "loadingList": "Carregando todas as Releases. Aguarde...",
+    "settingGlobal": "Configurando Sdk Release {version} como Global. Aguarde...",
+    "finishApp": "Finalizar Aplicação",
+    "closeWindow": "Você pode minimizar FEGI como ícone do sistema.\nTem certeza que deseja fechar?",
+    "noSdk": "Você não tem nenhuma Sdk Releases instaladas.\nUse o botão 'Get Sdk',\n para instalar um dos Flutter Sdk.",
+    "infoCanNotRemove": "Você não pode remover a Sdk Release {version}, porque ele está instalado."
+  },
+  "btn": {
+    "back": "Voltar",
+    "yes": "Yes",
+    "no": "No",
+    "get": "Receber",
+    "submit": "Enviar",
+    "restart": "Reiniciar",
+    "cancel": "Cancelar",
+    "default": "Padrão",
+    "skip": "Pular",
+    "install": "Instalar",
+    "uninstall": "Desinstalar",
+    "globalset": "Setar como Global",
+    "globalremove": "Remover como Global",
+    "delete": "Deletar",
+    "download": "Baixar",
+    "remove": "Remover",
+    "close": "Fechar",
+    "save": "Salvar"
+  },
+  "home": {
+    "settings": "Configurações",
+    "configNow": "Configurar Agora",
+    "downloadAll": "Baixar Todos",
+    "deleteAll": "Deletar Todos",
+    "getSdk": "Receber Sdk",
+    "sdkVersion": "Versão",
+    "sdkArchitecture": "Arquitetura",
+    "releaseDate": "Data",
+    "dartVersion": "Versão do Dart",
+    "options": "Opções",
+    "closeWindow": "Fechar Janela"
+  },
+  "settings": {
+    "title": "Configurações",
+    "runStartup": "Executar quando iniciar o sistema",
+    "startupMinimized": "Minimizar quando iniciar",
+    "languages": "Idiomas",
+    "editors": "Editores Padrões",
+    "projectsFolder": "Directório de Projetos",
+    "updating": "Atualizando Configurações",
+    "setdefault": "Atualizar Configurações para Padrão",
+    "loading": "Carregando Configurações"
+  },
+  "startup": {
+    "title": "Configurações Iniciais",
+    "begin": "Vamos começar...",
+    "finish": "Finalizar"
+  },
+
+  "tray": {
+    "restoure": "Restaurar",
+    "global": "Global",
+    "releases": "Releases",
+    "version": "Versão",
+    "exit": "Sair"
+  }
+}
