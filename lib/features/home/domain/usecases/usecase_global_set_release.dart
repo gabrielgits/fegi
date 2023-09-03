@@ -40,7 +40,7 @@ class UsecaseGlobalSetRelease {
     keys.list.removeWhere(
       (element) => element.contains(appPath.path) || element.isEmpty,
     );
-    String path = '${appPath.path}/${App.pathSdk}${release.version};';
+    String path = '${appPath.path}/${App.pathSdk}${release.version}/flutter/bin;';
     keys.list.add(path.replaceAll('/', '\\'));
     String keysValue = keys.list.join(';');
 
