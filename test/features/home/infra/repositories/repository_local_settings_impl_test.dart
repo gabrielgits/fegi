@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../models/mock_settings_model.dart';
+import '../../../home/infra/models/mock_settings_model.dart';
 
 @GenerateNiceMocks([MockSpec<DataLocal>()])
 import 'repository_local_settings_impl_test.mocks.dart';

@@ -67,10 +67,10 @@ class _FakeExptService_3 extends _i1.SmartFake implements _i5.ExptService {
         );
 }
 
-/// A class which mocks [RepositoryLocalHome].
+/// A class which mocks [RepositoryLocalRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryLocalHome extends _i1.Mock
+class MockRepositoryLocalRelease extends _i1.Mock
     implements _i6.RepositoryLocalRelease {
   @override
   _i7.Future<({_i2.ExptData exception, int id})> addRelease(
@@ -434,10 +434,10 @@ class MockRepositoryLocalHome extends _i1.Mock
       ) as _i7.Future<({_i2.ExptData exception, _i3.SdkRelease release})>);
 }
 
-/// A class which mocks [RepositoryRemoteHome].
+/// A class which mocks [RepositoryRemoteRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryRemoteHome extends _i1.Mock
+class MockRepositoryRemoteRelease extends _i1.Mock
     implements _i8.RepositoryRemoteRelease {
   @override
   _i7.Future<({_i4.ExptWeb exception, List<_i3.SdkRelease> releases})>

@@ -32,10 +32,10 @@ class _FakeExptWeb_0 extends _i1.SmartFake implements _i2.ExptWeb {
         );
 }
 
-/// A class which mocks [RepositoryRemoteHome].
+/// A class which mocks [RepositoryRemoteRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryRemoteHome extends _i1.Mock
+class MockRepositoryRemoteRelease extends _i1.Mock
     implements _i3.RepositoryRemoteRelease {
   @override
   _i4.Future<({_i2.ExptWeb exception, List<_i5.SdkRelease> releases})>

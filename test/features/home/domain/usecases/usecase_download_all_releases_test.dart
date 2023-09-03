@@ -18,8 +18,8 @@ import 'usecase_download_all_releases_test.mocks.dart';
 
 void main() {
   final serviceFile = MockServiceFile();
-  final repositoryLocal = MockRepositoryLocalHome();
-  final repositoryRemote = MockRepositoryRemoteHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
+  final repositoryRemote = MockRepositoryRemoteRelease();
   late UseCaseDownloadAllReleases usecaseDownloadAllVersion;
 
   setUp(() {
@@ -54,8 +54,8 @@ void main() {
           (releases: mockListModelSdkRelease, exception: ExptDataNoExpt()));
 
       final result = await usecaseDownloadAllVersion.call();
-      expect(result.exptData, equals(ExptDataNoExpt()));
-      expect(result.exptWeb, equals(ExptWebNoExpt()));
+      expect(result.exptData, ExptDataNoExpt());
+      expect(result.exptWeb, ExptWebNoExpt());
     });
 
     test(
@@ -83,8 +83,8 @@ void main() {
           (releases: mockListModelSdkRelease, exception: ExptDataNoExpt()));
 
       final result = await usecaseDownloadAllVersion.call();
-      expect(result.exptData, equals(ExptDataLoad()));
-      expect(result.exptWeb, equals(ExptWebNoExpt()));
+      expect(result.exptData, ExptDataLoad());
+      expect(result.exptWeb, ExptWebNoExpt());
     });
 
     test(
@@ -112,8 +112,8 @@ void main() {
           (releases: mockListModelSdkRelease, exception: ExptDataNoExpt()));
 
       final result = await usecaseDownloadAllVersion.call();
-      expect(result.exptData, equals(ExptDataNoExpt()));
-      expect(result.exptWeb, equals(ExptWebGet()));
+      expect(result.exptData, ExptDataNoExpt());
+      expect(result.exptWeb, ExptWebGet());
     });
 
     test('Download All SdkVersions from local data if save file has exception',
@@ -168,8 +168,8 @@ void main() {
           (_) async => (releases: emptyList, exception: ExptDataSave()));
 
       final result = await usecaseDownloadAllVersion.call();
-      expect(result.exptData, equals(ExptDataSave()));
-      expect(result.exptWeb, equals(ExptWebNoExpt()));
+      expect(result.exptData, ExptDataSave());
+      expect(result.exptWeb, ExptWebNoExpt());
     });
   });
 }

@@ -42,10 +42,10 @@ class _FakeSdkRelease_1 extends _i1.SmartFake implements _i3.SdkRelease {
         );
 }
 
-/// A class which mocks [RepositoryLocalHome].
+/// A class which mocks [RepositoryLocalRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryLocalHome extends _i1.Mock
+class MockRepositoryLocalRelease extends _i1.Mock
     implements _i4.RepositoryLocalRelease {
   @override
   _i5.Future<({_i2.ExptData exception, int id})> addRelease(

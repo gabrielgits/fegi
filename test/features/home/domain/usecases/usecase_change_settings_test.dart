@@ -1,7 +1,7 @@
 import 'package:fegi/core/exceptions/expt_data.dart';
 import 'package:fegi/core/feature/infra/datasources/data_local.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_settings.dart';
-import 'package:fegi/features/settings/domain/usecases/usecase_change_settings.dart';
+import 'package:fegi/features/home/domain/usecases/usecase_change_settings.dart';
 import 'package:fegi/features/home/infra/repositories/repository_local_settings_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

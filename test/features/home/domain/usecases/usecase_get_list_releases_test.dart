@@ -13,7 +13,7 @@ import 'usecase_get_list_releases_test.mocks.dart';
 
 void main() {
 
-  final repositoryRemote = MockRepositoryRemoteHome();
+  final repositoryRemote = MockRepositoryRemoteRelease();
   late UsecaseGetListReleases usecaseGetVersions;
 
   setUp(() {

@@ -18,8 +18,8 @@ import 'usecase_download_release_test.mocks.dart';
 
 void main() {
   final serviceFile = MockServiceFile();
-  final repositoryLocal = MockRepositoryLocalHome();
-  final repositoryRemote = MockRepositoryRemoteHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
+  final repositoryRemote = MockRepositoryRemoteRelease();
 
   late UsecaseDownloadReleases usecaseDownloadVersion;
 

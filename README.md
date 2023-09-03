@@ -90,7 +90,8 @@ This APP has the following dependencies:
 - [equatable](https://pub.dev/packages/equatable): Being able to compare objects without override the == operator as well as hashCode.
 - [archive](https://pub.dev/packages/archive): Extract zip file and compress folder or file.
 - [window_manager](https://pub.dev/packages/window_manager): Resizing and repositioning the window.
- [win32_registry](https://pub.dev/packages/win32_registry): Provides a friendly Dart API for accessing the Windows registry.
+- [system_tray](https://pub.dev/packages/system_tray): Support for system tray menu for desktop flutter apps. on Windows, macOS, and Linux.
+- [win32_registry](https://pub.dev/packages/win32_registry): Provides a friendly Dart API for accessing the Windows registry.
 
 ### state management:
 - [provider](https://pub.dev/packages/provider): A wrapper around InheritedWidget to make them easier to use and more reusable.
@@ -99,7 +100,6 @@ This APP has the following dependencies:
 - [dio](https://pub.dev/packages/dio): A powerful HTTP client which FormData, request cancellation, file uploading/downloading, etc.
 - [shared_preferences](https://pub.dev/packages/shared_preferences): Storing data quickly.
 - [path_provider](https://pub.dev/packages/path_provider): Finding commonly used locations on the filesystem.
-- [system_tray](https://pub.dev/packages/system_tray): Support for system tray menu for desktop flutter apps. on Windows, macOS, and Linux.
 
 
 ## Technical aspects

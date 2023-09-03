@@ -37,6 +37,9 @@ void main() {
 
       when(repositoryLocal.createSettings(any))
           .thenAnswer((_) async => (id: mockSettingsModel.id, exception: ExptDataNoExpt()));
+      
+      when(repositoryLocal.createListSdkReleases(any))
+          .thenAnswer((_) async => (count: 1, exception: ExptDataNoExpt()));
 
       final result = await usecaseCreateInitialSettings.call();
 

@@ -189,10 +189,10 @@ class MockServiceFile extends _i1.Mock implements _i5.ServiceFile {
       ) as _i6.Future<_i2.ExptService>);
 }
 
-/// A class which mocks [RepositoryLocalHome].
+/// A class which mocks [RepositoryLocalRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryLocalHome extends _i1.Mock
+class MockRepositoryLocalRelease extends _i1.Mock
     implements _i7.RepositoryLocalRelease {
   @override
   _i6.Future<({_i3.ExptData exception, int id})> addRelease(

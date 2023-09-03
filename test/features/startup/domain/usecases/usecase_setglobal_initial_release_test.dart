@@ -1,4 +1,5 @@
 import 'package:fegi/core/constants.dart';
+import 'package:fegi/core/exceptions/expt_data.dart';
 import 'package:fegi/core/exceptions/expt_service.dart';
 import 'package:fegi/core/feature/infra/services/service_file.dart';
 import 'package:fegi/core/feature/infra/services/service_os.dart';
@@ -32,12 +33,6 @@ void main() {
 
   group('Usecase Set Global Release', () {
     test('Set global sdk releases should return no exception', () async {
-      when(serviceOs.updateEnvPath(
-        path: App.keyWinPathApp,
-        key: anyNamed('key'),
-        value: anyNamed('value'),
-      )).thenReturn(ExptServiceNoExpt());
-
       when(serviceOs.readEnvPath(
         path: anyNamed('path'),
         key: anyNamed('key'),
@@ -46,27 +41,53 @@ void main() {
         exptService: ExptServiceNoExpt()
       ));
 
-      when(serviceFile.getAppPath()).thenReturn((path: '/', exptService: ExptServiceNoExpt()));
+      when(serviceFile.getAppPath())
+          .thenReturn((path: '/', exptService: ExptServiceNoExpt()));
 
       when(serviceOs.updateEnvPath(
-        path: App.keyWinPathEnv,
+        path: anyNamed('path'),
         key: anyNamed('key'),
         value: anyNamed('value'),
       )).thenReturn(ExptServiceNoExpt());
 
+      when(repositoryLocal.createGlobalSdkRelease(any))
+          .thenAnswer((_) async => (exception: ExptDataNoExpt(), id: 1));
+
       final result = await usecaseInstallRelease.call(mockModelSdkRelease);
 
-      expect(result, ExptServiceNoExpt());
+      expect(result.exptService, ExptServiceNoExpt());
+      expect(result.exptData, ExptDataNoExpt());
     });
 
     test('Set global sdk releases if updateEnvPath fails', () async {
+      when(serviceOs.readEnvPath(
+        path: anyNamed('path'),
+        key: anyNamed('key'),
+      )).thenReturn((
+        list: [mockModelSdkRelease.version],
+        exptService: ExptServiceNoExpt()
+      ));
+
+      when(serviceFile.getAppPath())
+          .thenReturn((path: '/', exptService: ExptServiceNoExpt()));
+
       when(serviceOs.updateEnvPath(
-        path: App.keyWinPathApp,
+        path: anyNamed('path'),
         key: anyNamed('key'),
         value: anyNamed('value'),
       )).thenReturn(ExptServiceExecute());
 
-      when(serviceOs.readEnvPath(
+      when(repositoryLocal.createGlobalSdkRelease(any))
+          .thenAnswer((_) async => (exception: ExptDataNoExpt(), id: 1));
+
+      final result = await usecaseInstallRelease.call(mockModelSdkRelease);
+
+      expect(result.exptService, ExptServiceExecute());
+      expect(result.exptData, ExptDataNoExpt());
+    });
+
+    test('Set global sdk releases if createGlobalSdkRelease fails', () async {
+            when(serviceOs.readEnvPath(
         path: anyNamed('path'),
         key: anyNamed('key'),
       )).thenReturn((
@@ -74,50 +95,23 @@ void main() {
         exptService: ExptServiceNoExpt()
       ));
 
-      when(serviceFile.getAppPath()).thenReturn((path: '/', exptService: ExptServiceNoExpt()));
+      when(serviceFile.getAppPath())
+          .thenReturn((path: '/', exptService: ExptServiceNoExpt()));
 
       when(serviceOs.updateEnvPath(
-        path: App.keyWinPathEnv,
-        key: anyNamed('key'),
-        value: anyNamed('value'),
-      )).thenReturn(ExptServiceNoExpt());
-
-      final result = await usecaseInstallRelease.call(mockModelSdkRelease);
-
-      expect(result, ExptServiceExecute());
-    });
-
-
-  
-      test('Set global sdk releases if updateEnvPath return empty', () async {
-      when(serviceOs.updateEnvPath(
-        path: App.keyWinPathApp,
-        key: anyNamed('key'),
-        value: anyNamed('value'),
-      )).thenReturn(ExptServiceNoExpt());
-
-      List<String> emptyList = [];
-      when(serviceOs.readEnvPath(
         path: anyNamed('path'),
         key: anyNamed('key'),
-      )).thenReturn((
-        list: emptyList,
-        exptService: ExptServiceNoExpt(),
-      ));
-
-      when(serviceFile.getAppPath()).thenReturn((path: '/', exptService: ExptServiceNoExpt()));
-
-      when(serviceOs.updateEnvPath(
-        path: App.keyWinPathEnv,
-        key: anyNamed('key'),
         value: anyNamed('value'),
       )).thenReturn(ExptServiceNoExpt());
 
+
+      when(repositoryLocal.createGlobalSdkRelease(any))
+          .thenAnswer((_) async => (exception: ExptDataSave(), id: 1));
+
       final result = await usecaseInstallRelease.call(mockModelSdkRelease);
 
-      expect(result, ExptServiceUnknown());
+      expect(result.exptService, ExptServiceNoExpt());
+      expect(result.exptData, ExptDataSave());
     });
-
-      });
-  
+  });
 }

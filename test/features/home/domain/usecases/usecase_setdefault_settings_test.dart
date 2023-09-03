@@ -1,13 +1,13 @@
 import 'package:fegi/core/exceptions/expt_data.dart';
 import 'package:fegi/core/feature/infra/datasources/data_local.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_settings.dart';
-import 'package:fegi/features/settings/domain/usecases/usecase_setdefault_settings.dart';
+import 'package:fegi/features/home/domain/usecases/usecase_setdefault_settings.dart';
 import 'package:fegi/features/home/infra/repositories/repository_local_settings_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../infra/models/mock_settings_model.dart';
+import '../../../home/infra/models/mock_settings_model.dart';
 
 @GenerateNiceMocks([MockSpec<DataLocal>()])
 import 'usecase_setdefault_settings_test.mocks.dart';

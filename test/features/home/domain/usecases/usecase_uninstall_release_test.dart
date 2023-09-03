@@ -15,7 +15,7 @@ import 'usecase_uninstall_release_test.mocks.dart';
 
 void main() {
   final serviceFile = MockServiceFile();
-  final repositoryLocal = MockRepositoryLocalHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
   late UsecaseUninstallRelease usecaseUninstallVersion;
 
   setUp(() {
@@ -29,77 +29,52 @@ void main() {
     test(
         'Uninstall current SdkVersion on local environment without no exception',
         () async {
-      when(repositoryLocal.loadGlobalRelease()).thenAnswer((_) async =>
-          (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
 
       when(serviceFile.deleteFolder(any)).thenReturn(ExptServiceNoExpt());
 
       when(
-        repositoryLocal.updateReleaseState(id: anyNamed('id'), state: anyNamed('state')),
-      ).thenAnswer((_) async => (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
+        repositoryLocal.updateReleaseState(
+            id: anyNamed('id'), state: anyNamed('state')),
+      ).thenAnswer((_) async =>
+          (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
 
       final result = await usecaseUninstallVersion.call(mockModelSdkRelease);
       expect(result.exptData, ExptDataNoExpt());
       expect(result.exptService, ExptServiceNoExpt());
-
     });
-  
+
     test(
-        'Uninstall current SdkVersion on local environment if has exception to load global release',
-        () async {
-      when(repositoryLocal.loadGlobalRelease()).thenAnswer((_) async =>
-          (release: SdkReleaseModel.newObject(), exception: ExptDataLoad()));
-
-      when(serviceFile.deleteFolder(any)).thenReturn(ExptServiceNoExpt());
-
-      when(
-        repositoryLocal.updateReleaseState(id: anyNamed('id'), state: anyNamed('state')),
-      ).thenAnswer((_) async => (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
-
-      final result = await usecaseUninstallVersion.call(mockModelSdkRelease);
-      expect(result.exptData, ExptDataLoad());
-      expect(result.exptService, ExptServiceNoExpt());
-
-    });
-  
-      test(
         'Uninstall current SdkVersion on local environment if has exception to delete folder',
         () async {
-      when(repositoryLocal.loadGlobalRelease()).thenAnswer((_) async =>
-          (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
 
       when(serviceFile.deleteFolder(any)).thenReturn(ExptServiceExecute());
 
       when(
-        repositoryLocal.updateReleaseState(id: anyNamed('id'), state: anyNamed('state')),
-      ).thenAnswer((_) async => (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
+        repositoryLocal.updateReleaseState(
+            id: anyNamed('id'), state: anyNamed('state')),
+      ).thenAnswer((_) async =>
+          (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
 
       final result = await usecaseUninstallVersion.call(mockModelSdkRelease);
       expect(result.exptData, ExptDataNoExpt());
       expect(result.exptService, ExptServiceExecute());
-
     });
-    
-      test(
+
+    test(
         'Uninstall current SdkVersion on local environment if has exception to update state',
         () async {
-      when(repositoryLocal.loadGlobalRelease()).thenAnswer((_) async =>
-          (release: mockModelSdkRelease, exception: ExptDataNoExpt()));
 
       when(serviceFile.deleteFolder(any)).thenReturn(ExptServiceNoExpt());
 
       when(
-        repositoryLocal.updateReleaseState(id: anyNamed('id'), state: anyNamed('state')),
-      ).thenAnswer((_) async => (release: SdkReleaseModel.newObject(), exception: ExptDataSave()));
+        repositoryLocal.updateReleaseState(
+            id: anyNamed('id'), state: anyNamed('state')),
+      ).thenAnswer((_) async =>
+          (release: SdkReleaseModel.newObject(), exception: ExptDataSave()));
 
       final result = await usecaseUninstallVersion.call(mockModelSdkRelease);
       expect(result.exptData, ExptDataSave());
       expect(result.exptService, ExptServiceNoExpt());
-
     });
-  
-
   });
-
-
 }

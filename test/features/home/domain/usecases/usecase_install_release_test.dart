@@ -18,7 +18,7 @@ import 'usecase_install_release_test.mocks.dart';
 
 void main() {
   final serviceCompress = MockServiceCompress();
-  final repositoryLocal = MockRepositoryLocalHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
   late UsecaseInstallRelease usecaseInstallRelease;
 
   setUp(() {

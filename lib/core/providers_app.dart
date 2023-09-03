@@ -1,5 +1,3 @@
-import 'package:fegi/features/home/domain/usecases/usecase_load_global_release.dart';
-import 'package:fegi/features/home/domain/usecases/usecase_remove_release.dart';
 import 'package:provider/provider.dart';
 
 import '../features/home/domain/repositories/repository_local_release.dart';
@@ -13,9 +11,11 @@ import '../features/home/domain/usecases/usecase_get_list_releases.dart';
 import '../features/home/domain/usecases/usecase_global_remove_release.dart';
 import '../features/home/domain/usecases/usecase_import_releases.dart';
 import '../features/home/domain/usecases/usecase_install_release.dart';
+import '../features/home/domain/usecases/usecase_load_global_release.dart';
 import '../features/home/domain/usecases/usecase_load_releases.dart';
 import '../features/home/domain/usecases/usecase_global_set_release.dart';
 import '../features/home/domain/usecases/usecase_load_settings.dart';
+import '../features/home/domain/usecases/usecase_remove_release.dart';
 import '../features/home/domain/usecases/usecase_setdefault_settings.dart';
 import '../features/home/domain/usecases/usecase_uninstall_release.dart';
 import '../features/home/infra/repositories/repository_local_release_impl.dart';

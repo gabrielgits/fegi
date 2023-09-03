@@ -82,23 +82,5 @@ void main() {
       expect(result.exptData, ExptDataLoad());
     });
 
-    test('Install initial sdk releases if createGlobalSdkRelease fails',
-        () async {
-      when(serviceCompress.unzip(
-        sourcePath: anyNamed('sourcePath'),
-        destinationPath: anyNamed('destinationPath'),
-      )).thenAnswer((_) async => (ExptServiceNoExpt()));
-
-      when(repositoryLocal.createListSdkReleases(any))
-          .thenAnswer((_) async => (count: 1, exception: ExptDataNoExpt()));
-
-      when(repositoryLocal.createGlobalSdkRelease(any))
-          .thenAnswer((_) async => (id: 0, exception: ExptDataSave()));
-
-      final result = await usecaseInstallRelease.call(mockModelSdkRelease);
-
-      expect(result.exptService, ExptServiceNoExpt());
-      expect(result.exptData, ExptDataSave());
-    });
   });
 }

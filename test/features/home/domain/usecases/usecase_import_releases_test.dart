@@ -10,7 +10,7 @@ import '../../../../core/infra/models/mock_models_sdkrelease.dart';
 import 'usecase_import_releases_test.mocks.dart';
 
 void main() {
-  final repositoryLocal = MockRepositoryLocalHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
   late UsecaseImportReleases usecaseImportVersions;
 
   setUp(() {

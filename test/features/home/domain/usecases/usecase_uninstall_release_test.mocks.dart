@@ -54,10 +54,10 @@ class _FakeExptService_2 extends _i1.SmartFake implements _i4.ExptService {
         );
 }
 
-/// A class which mocks [RepositoryLocalHome].
+/// A class which mocks [RepositoryLocalRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRepositoryLocalHome extends _i1.Mock
+class MockRepositoryLocalRelease extends _i1.Mock
     implements _i5.RepositoryLocalRelease {
   @override
   _i6.Future<({_i2.ExptData exception, int id})> addRelease(

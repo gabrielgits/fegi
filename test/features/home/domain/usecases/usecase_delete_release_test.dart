@@ -16,7 +16,7 @@ import 'usecase_delete_release_test.mocks.dart';
 
 void main() {
   final serviceFile = MockServiceFile();
-  final repositoryLocal = MockRepositoryLocalHome();
+  final repositoryLocal = MockRepositoryLocalRelease();
   late UsecaseDeleteRelease usecaseDeleteVersion;
 
   setUp(() {
