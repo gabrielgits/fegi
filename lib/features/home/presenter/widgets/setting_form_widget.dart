@@ -36,6 +36,20 @@ class _SettingsFormWidgetState extends State<SettingsFormWidget> {
       ControllerStateLoading() => LoadingViewWidget(
           info: controller.controllerState.toString(),
         ),
+      ControllerStateEmpty() => Column(
+        children: [
+          Text(
+            tr('msn.noConfig'),
+          ),
+          const SizedBox(height: 10),
+          BformButton(
+            label: tr('btn.back'),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+          )
+        ]
+      ),
       ControllerStateLoaded() => BformForm(
           width: 300,
           border: Border.all(color: Theme.of(context).colorScheme.primary),

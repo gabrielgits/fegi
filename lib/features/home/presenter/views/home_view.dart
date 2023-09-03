@@ -76,19 +76,19 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                 style: BformButtonStyle.outlined,
                 colors: [color],
                 onPressed: globalReleaseState != ControllerStateLoaded()
-                      ? null
-                      :  () async {
-                  bool dialog = await dialogHelper(
-                    title: tr('home.getSdk'),
-                    context: context,
-                    content: const GetsdkTableWidget(),
-                    yesButton: tr('btn.get'),
-                    noButton: tr('btn.cancel'),
-                  );
-                  if (dialog) {
-                    controller.importReleases();
-                  }
-                },
+                    ? null
+                    : () async {
+                        bool dialog = await dialogHelper(
+                          title: tr('home.getSdk'),
+                          context: context,
+                          content: const GetsdkTableWidget(),
+                          yesButton: tr('btn.get'),
+                          noButton: tr('btn.cancel'),
+                        );
+                        if (dialog) {
+                          controller.importReleases();
+                        }
+                      },
               ),
               middleChild: BformButton(
                   label: tr('home.downloadAll'),
@@ -96,17 +96,35 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                   colors: [color],
                   onPressed: globalReleaseState != ControllerStateLoaded()
                       ? null
-                      :  () {
-                    controller.downloadAllReleases();
-                  }),
+                      : () async {
+                          bool dialog = await dialogHelper(
+                            context: context,
+                            title: tr('home.donwloadAllTitle'),
+                            content: Text(tr('home.downloadAllAsk')),
+                            yesButton: tr('btn.yes'),
+                            noButton: tr('btn.no'),
+                          );
+                          if (dialog) {
+                            controller.downloadAllReleases();
+                          }
+                        }),
               rightChild: BformButton(
                   label: tr('home.deleteAll'),
                   style: BformButtonStyle.outlined,
                   colors: [color],
                   onPressed: globalReleaseState != ControllerStateLoaded()
                       ? null
-                      : () {
-                          controller.deleteAllReleases();
+                      : () async {
+                          bool dialog = await dialogHelper(
+                            context: context,
+                            title: tr('home.deleteAllTitle'),
+                            content: Text(tr('home.deleteAllAsk')),
+                            yesButton: tr('btn.yes'),
+                            noButton: tr('btn.no'),
+                          );
+                          if (dialog) {
+                            controller.deleteAllReleases();
+                          }
                         }),
             ),
           );

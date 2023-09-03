@@ -53,6 +53,10 @@
     "releaseDate": "Date",
     "dartVersion": "Dart Version",
     "options": "Options",
+    "donwloadAllTitle": "Download All Releases Available",
+    "deleteAllTitle": "Delete All Releases Downloaded",
+    "downloadAllAsk": "This will download only available releases.\nMay take a while depending on your internet connection.\nAre you sure you want to download all releases?",
+    "deleteAllAsk": "This will delete all releases downloaded not installed.\nYou will have to download them again.\nAre you sure you want to delete all releases?",
     "closeWindow": "Close Window"
   },
   "settings": {

@@ -29,7 +29,7 @@ class UsecaseDownloadInitialReleases {
     if (saved != ExptServiceNoExpt()) {
       return (exptWeb: ExptWebNoExpt(), exptService: saved);
     }
-    remoteData.data.clear();
+    //remoteData.data.clear();
 
     return (exptWeb: ExptWebNoExpt(), exptService: ExptServiceNoExpt());
   }

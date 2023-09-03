@@ -41,7 +41,7 @@ class UseCaseDownloadAllReleases {
           exptData: ExptDataUnknown(saved.toString()),
         );
       }
-      remoteData.data.clear();
+      //remoteData.data.clear();
     }
 
     final localData = await repositoryLocal.updateListReleaseState(

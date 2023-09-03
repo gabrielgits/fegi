@@ -31,7 +31,7 @@ final ServiceFile serviceFile;
       if (saved != ExptServiceNoExpt()) {
         return (exptWeb: ExptWebUnknown(saved.toString()), exptData: ExptDataUnknown(saved.toString()));
       } 
-      remoteData.data.clear();
+      //remoteData.data.clear();
 
       final localData = await repositoryLocal.updateReleaseState(
           id: release.id, state: SdkState.downloaded);

@@ -93,11 +93,11 @@ class ControllerHome extends ChangeNotifier {
   }
 
   Future<void> changeSettings() async {
-    controllerState = ControllerStateLoading(tr('settings.updating'));
+    globalState = ControllerStateLoading(tr('settings.updating'));
     notifyListeners();
     final result = await usecaseChangeSettings.call(settings);
     if (result.exception != ExptDataNoExpt()) {
-      controllerState = ControllerStateError(result.exception.toString());
+      globalState = ControllerStateError(result.exception.toString());
       notifyListeners();
       throw result.exception;
     }

@@ -28,9 +28,9 @@ FEGI is designed for everyone who wants to efficiently configure their environme
 Just download the setup file from the link above and run it.
 
 <p align="center">
-<a align="center"><img width="450" height="400" src="./setup/setup_win.png" /></a>
-<a align="center"><img width="450" height="400"  src="./setup/setup_mac.png" /></a>
-<a align="center"><img width="450" height="400" src="./setup/setup_linux.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/screenshot/setup_win.png" /></a>
+<a align="center"><img width="450" height="400"  src="./setup/screenshot/setup_mac.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/screenshot/setup_linux.png" /></a>
 </p>
 
 
@@ -39,9 +39,9 @@ Just download the setup file from the link above and run it.
 Just download the setup file from the link above and run it.
 
 <p align="center">
-<a align="center"><img width="450" height="400" src="./setup/use_win.png" /></a>
-<a align="center"><img width="450" height="400" src="./setup/setup_mac.png" /></a>
-<a align="center"><img width="450" height="400" src="./setup/setup_linux.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/screenshot/use_win.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/screenshot/setup_mac.png" /></a>
+<a align="center"><img width="450" height="400" src="./setup/screenshot/setup_linux.png" /></a>
 </p>
 
 ## Features

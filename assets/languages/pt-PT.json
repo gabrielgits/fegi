@@ -50,6 +50,10 @@
     "releaseDate": "Data",
     "dartVersion": "Versão do Dart",
     "options": "Opções",
+    "donwloadAllTitle": "Baixar Todas as Releases Disponíveis",
+    "deleteAllTitle": "Deletar Todas as Releases Baixadas",
+    "downloadAllAsk": "Está operação vai baixar apenas as releases disponíveis.\nPode demorar dependendo da sua conexão com a internet.\nVocê tem certeza que deseja baixar todas as releases?",	
+    "deleteAllAsk": "Esta operação irá deletar todas as releases baixadas e não instaladas.\nVocê terá que baixar novamente.\nVocê tem certeza que deseja deletar todas as releases?",
     "closeWindow": "Fechar Janela"
   },
   "settings": {
