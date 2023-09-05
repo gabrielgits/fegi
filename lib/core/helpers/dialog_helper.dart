@@ -8,19 +8,18 @@ Future<bool> dialogHelper({
   required String title,
   required Widget content,
   required String yesButton,
-  required String noButton,
+  bool barrierDismissible = false,
+  String? noButton,
 }) async {
   bool confirmation = false;
   await showDialog(
     context: context,
-    barrierDismissible : false,
+    barrierDismissible : barrierDismissible,
     builder: (context) => AlertDialog(
       title: Text(title),
-      content: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: content,
-      ),
+      content: content,
       actions: <Widget>[
+        noButton == null ? Container() :
         TextButton.icon(
           style: TextButton.styleFrom(foregroundColor: Colors.deepOrange),
           icon: const Icon(Icons.cancel),

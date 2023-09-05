@@ -41,17 +41,36 @@ class BformObjImpl implements BformObj {
         id: 1,
         title: 'NotePad++',
         subtitle: 'pad',
-        imagePath: 'assets/images/editors/pad.png'),
+        imagePath: 'assets/images/tools/pad.png'),
     BformObjImpl(
         id: 2,
         title: 'VS Code',
         subtitle: 'vscode',
-        imagePath: 'assets/images/editors/vscode.png'),
+        imagePath: 'assets/images/tools/vscode.png'),
     BformObjImpl(
         id: 3,
         title: 'Android Studio',
         subtitle: 'studio',
-        imagePath: 'assets/images/editors/studio.png'),
+        imagePath: 'assets/images/tools/studio.png'),
+  ];
+
+
+  final listTools = [
+    BformObjImpl(
+        id: 1,
+        title: 'GitHub Desktop',
+        subtitle: 'https://desktop.github.com/',
+        imagePath: 'assets/images/tools/github_desktop.png'),
+    BformObjImpl(
+        id: 2,
+        title: 'VS Code',
+        subtitle: 'https://code.visualstudio.com/',
+        imagePath: 'assets/images/tools/vscode.png'),
+    BformObjImpl(
+        id: 3,
+        title: 'Android Studio',
+        subtitle: 'https://developer.android.com/',
+        imagePath: 'assets/images/tools/studio.png'),
   ];
 
 

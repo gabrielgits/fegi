@@ -8,6 +8,7 @@ import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
 
 import '../widgets/appbar_widget.dart';
@@ -49,6 +50,17 @@ class _HomeViewState extends State<HomeView> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
+    const appcastURL =
+        'https://raw.githubusercontent.com/gabrielgits/fegi/main/setup/upgrader.xml';
+    final appcastConfig = AppcastConfiguration(
+      url: appcastURL,
+      supportedOS: [
+        'windows',
+        'macos',
+        'linux',
+      ],
+    );
+
     return Selector<ControllerHome, ControllerState>(
         selector: (context, controller) => controller.globalState,
         builder: (context, globalReleaseState, _) {
@@ -61,71 +73,74 @@ class _HomeViewState extends State<HomeView> with WindowListener {
             context.setLocale(const Locale('pt', 'PT'));
           }
 
-          return Scaffold(
-            appBar: const AppbarWidget(title: App.describe),
-            body: switch (globalReleaseState) {
-              ControllerStateLoaded() => const Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: AvailableReleasesWidget(),
+          return UpgradeAlert(
+            upgrader: Upgrader(appcastConfig: appcastConfig),
+            child: Scaffold(
+              appBar: const AppbarWidget(title: App.describe),
+              body: switch (globalReleaseState) {
+                ControllerStateLoaded() => const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AvailableReleasesWidget(),
+                  ),
+                _ => const ConfigNowWidget(),
+              },
+              bottomNavigationBar: BformFooter(
+                leftChild: BformButton(
+                  label: tr('home.getSdk'),
+                  style: BformButtonStyle.outlined,
+                  colors: [color],
+                  onPressed: globalReleaseState != ControllerStateLoaded()
+                      ? null
+                      : () async {
+                          bool dialog = await dialogHelper(
+                            title: tr('home.getSdk'),
+                            context: context,
+                            content: const GetsdkTableWidget(),
+                            yesButton: tr('btn.get'),
+                            noButton: tr('btn.cancel'),
+                          );
+                          if (dialog) {
+                            controller.importReleases();
+                          }
+                        },
                 ),
-              _ => const ConfigNowWidget(),
-            },
-            bottomNavigationBar: BformFooter(
-              leftChild: BformButton(
-                label: tr('home.getSdk'),
-                style: BformButtonStyle.outlined,
-                colors: [color],
-                onPressed: globalReleaseState != ControllerStateLoaded()
-                    ? null
-                    : () async {
-                        bool dialog = await dialogHelper(
-                          title: tr('home.getSdk'),
-                          context: context,
-                          content: const GetsdkTableWidget(),
-                          yesButton: tr('btn.get'),
-                          noButton: tr('btn.cancel'),
-                        );
-                        if (dialog) {
-                          controller.importReleases();
-                        }
-                      },
+                middleChild: BformButton(
+                    label: tr('home.downloadAll'),
+                    style: BformButtonStyle.outlined,
+                    colors: [color],
+                    onPressed: globalReleaseState != ControllerStateLoaded()
+                        ? null
+                        : () async {
+                            bool dialog = await dialogHelper(
+                              context: context,
+                              title: tr('home.donwloadAllTitle'),
+                              content: Text(tr('home.downloadAllAsk')),
+                              yesButton: tr('btn.yes'),
+                              noButton: tr('btn.no'),
+                            );
+                            if (dialog) {
+                              controller.downloadAllReleases();
+                            }
+                          }),
+                rightChild: BformButton(
+                    label: tr('home.deleteAll'),
+                    style: BformButtonStyle.outlined,
+                    colors: [color],
+                    onPressed: globalReleaseState != ControllerStateLoaded()
+                        ? null
+                        : () async {
+                            bool dialog = await dialogHelper(
+                              context: context,
+                              title: tr('home.deleteAllTitle'),
+                              content: Text(tr('home.deleteAllAsk')),
+                              yesButton: tr('btn.yes'),
+                              noButton: tr('btn.no'),
+                            );
+                            if (dialog) {
+                              controller.deleteAllReleases();
+                            }
+                          }),
               ),
-              middleChild: BformButton(
-                  label: tr('home.downloadAll'),
-                  style: BformButtonStyle.outlined,
-                  colors: [color],
-                  onPressed: globalReleaseState != ControllerStateLoaded()
-                      ? null
-                      : () async {
-                          bool dialog = await dialogHelper(
-                            context: context,
-                            title: tr('home.donwloadAllTitle'),
-                            content: Text(tr('home.downloadAllAsk')),
-                            yesButton: tr('btn.yes'),
-                            noButton: tr('btn.no'),
-                          );
-                          if (dialog) {
-                            controller.downloadAllReleases();
-                          }
-                        }),
-              rightChild: BformButton(
-                  label: tr('home.deleteAll'),
-                  style: BformButtonStyle.outlined,
-                  colors: [color],
-                  onPressed: globalReleaseState != ControllerStateLoaded()
-                      ? null
-                      : () async {
-                          bool dialog = await dialogHelper(
-                            context: context,
-                            title: tr('home.deleteAllTitle'),
-                            content: Text(tr('home.deleteAllAsk')),
-                            yesButton: tr('btn.yes'),
-                            noButton: tr('btn.no'),
-                          );
-                          if (dialog) {
-                            controller.deleteAllReleases();
-                          }
-                        }),
             ),
           );
         });

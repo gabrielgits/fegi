@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:upgrader/upgrader.dart';
 
 import 'app_widget.dart';
 import 'core/constants.dart';
@@ -14,9 +15,12 @@ Future<void> main() async {
   if (!App.debug) {
     EasyLocalization.logger.enableBuildModes = [];
   }
+  else {
+    await Upgrader.clearSavedSettings();
+  }
 
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(700, 500),
+    size: Size(700, 600),
     center: true,
     skipTaskbar: false,
   );

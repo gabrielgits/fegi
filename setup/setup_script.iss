@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Fegi"
-#define MyAppVersion "0.1"
+#define MyAppVersion "0.2"
 #define MyAppPublisher "Gabriel Vieira"
 #define MyAppURL "https://www.gabrielvieira.ao"
 #define MyAppExeName "fegi.exe"
@@ -20,10 +20,10 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName=C:\Fegi
 DisableProgramGroupPage=yes
-LicenseFile=C:\Disk\flutter\projects\fegi\LICENSE
+LicenseFile=..\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Disk\flutter\projects\fegi\setup
+;OutputDir=C:\Disk\flutter\projects\fegi\setup
 OutputBaseFilename=fegi-setup-win
 Compression=lzma
 SolidCompression=yes

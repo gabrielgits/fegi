@@ -76,6 +76,13 @@
     "finish": "Finish"
   },
 
+  "tools": {
+    "docs": "Documentation",
+    "projects" : "Projects",
+    "sources" : "Sources Code",
+    "title": "Tools"
+  },
+
   "tray": {
     "restoure": "Restore",
     "global": "Global",

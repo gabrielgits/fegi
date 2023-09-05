@@ -16,7 +16,7 @@ FEGI is designed for everyone who wants to efficiently configure their environme
     <strong>Available platforms</strong>
     <br />
     <div>
-    <a href="https://github.com/gabrielgits/fegi/raw/main/setup/fegi-setup-win.exe"><img width="15px" src="./assets/images/icons/platforms/windows.png">&nbsp;<label>Windows&nbsp;&nbsp;</label></a>
+    <a href="https://github.com/gabrielgits/fegi/raw/main/setup/Output/fegi-setup-win.exe"><img width="15px" src="./assets/images/icons/platforms/windows.png">&nbsp;<label>Windows&nbsp;&nbsp;</label></a>
     <img width="15px" src="./assets/images/icons/platforms/mac.png">&nbsp;<label>Mac OS X&nbsp;&nbsp;</label>
     <img width="15px" src="./assets/images/icons/platforms/linux.png">&nbsp;<label>Linux</label>
     </div>
@@ -86,7 +86,6 @@ This APP has the following dependencies:
 
 ### utils:
 - [easy_localization](https://pub.dev/packages/easy_localization): Localization and Internationalization.
-- [upgrader](https://pub.dev/packages/upgrader): Self update or update verify.
 - [equatable](https://pub.dev/packages/equatable): Being able to compare objects without override the == operator as well as hashCode.
 - [archive](https://pub.dev/packages/archive): Extract zip file and compress folder or file.
 - [window_manager](https://pub.dev/packages/window_manager): Resizing and repositioning the window.
@@ -100,6 +99,7 @@ This APP has the following dependencies:
 - [dio](https://pub.dev/packages/dio): A powerful HTTP client which FormData, request cancellation, file uploading/downloading, etc.
 - [shared_preferences](https://pub.dev/packages/shared_preferences): Storing data quickly.
 - [path_provider](https://pub.dev/packages/path_provider): Finding commonly used locations on the filesystem.
+- [upgrader](https://pub.dev/packages/upgrader): Package for prompting users to upgrade when there is a newer version of the app in the store.
 
 
 ## Technical aspects

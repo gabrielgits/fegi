@@ -72,6 +72,12 @@
     "begin": "Vamos começar...",
     "finish": "Finalizar"
   },
+  "tools": {
+    "docs": "Documentação",
+    "projects": "Projetos",
+    "sources" : "Código Fonte",
+    "title": "Ferramentas"
+  },
 
   "tray": {
     "restoure": "Restaurar",
@@ -80,4 +86,5 @@
     "version": "Versão",
     "exit": "Sair"
   }
+
 }

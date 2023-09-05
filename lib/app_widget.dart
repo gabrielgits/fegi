@@ -3,7 +3,7 @@ import 'package:fegi/core/providers_app.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'core/helpers/color_schemes.g.dart';
+import 'core/theme/color_schemes.g.dart';
 import 'core/constants.dart';
 import 'core/routes.dart';
 

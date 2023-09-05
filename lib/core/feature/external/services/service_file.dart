@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:fegi/core/exceptions/expt_service.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../infra/services/service_file.dart';
 
@@ -50,29 +49,18 @@ class ServiceFileImpl implements ServiceFile {
   }
 
   @override
-  Future<ExptService> openUrl(String link) async {
-    try {
-      final Uri url = Uri.parse(link);
-      final result = await launchUrl(url);
-      if (result) {
-        return ExptServiceNoExpt();
-      }
-      return ExptServiceUnknown('Could not launch $link');
-    } catch (e) {
-      return ExptServiceExecute(e.toString());
-    }
-  }
-
-  @override
   ({String path, ExptService exptService}) getAppPath() {
     String path = '/';
     try {
       final dir = Directory.current;
       if (dir.existsSync()) {
         path = dir.path;
-         return (path: path, exptService: ExptServiceNoExpt());
+        return (path: path, exptService: ExptServiceNoExpt());
       }
-      return (path: path, exptService: ExptServiceUnknown('Directory not found'));
+      return (
+        path: path,
+        exptService: ExptServiceUnknown('Directory not found')
+      );
     } catch (e) {
       return (path: '', exptService: ExptServiceExecute(e.toString()));
     }
