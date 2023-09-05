@@ -3,10 +3,10 @@
     <channel>
         <title>FEGI</title>
         <item>
-            <title>Version 0.2.0</title>
+            <title>Version 0.2.1</title>
             <description>Minor updates and improvements.</description>
-            <pubDate>Mon, 04 Set 2023 19:00:00 +0000</pubDate>
-            <enclosure url="https://raw.githubusercontent.com/gabrielgits/fegi/main/setup/Output/fegi-setup-win.exe" sparkle:version="0.2.0" sparkle:os="windows" />
+            <pubDate>Mon, 04 Set 2023 20:00:00 +0000</pubDate>
+            <enclosure url="https://raw.githubusercontent.com/gabrielgits/fegi/main/setup/Output/fegi-setup-win.exe" sparkle:version="0.2.1" sparkle:os="windows" />
         </item>
     </channel>
 </rss>

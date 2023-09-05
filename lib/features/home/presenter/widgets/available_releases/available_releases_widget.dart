@@ -80,7 +80,7 @@ class _AvailableReleasesWidgetState extends State<AvailableReleasesWidget> {
           ],
         ),
         SizedBox(
-          height: 375,
+          height: 290,
           child: SingleChildScrollView(
             child: Selector<ControllerHome,
                     ({ControllerState state, List<SdkRelease> list})>(
