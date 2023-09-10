@@ -5,6 +5,7 @@ import 'package:fegi/core/exceptions/expt_data.dart';
 import 'package:fegi/core/exceptions/expt_service.dart';
 import 'package:fegi/core/exceptions/expt_web.dart';
 import 'package:fegi/core/states/sdk_state.dart';
+import 'package:fegi/features/home/domain/usecases/usecase_create_initial_settings.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_delete_all_releases.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_delete_release.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_download_all_releases.dart';
@@ -52,12 +53,14 @@ class ControllerHome extends ChangeNotifier {
   final UsecaseGlobalSetRelease usecaseSetglobalRelease;
   final UsecaseGlobalRemoveRelease usecaseGlobalRemoveRelease;
   final UsecaseRemoveRelease usecaseRemoveRelease;
+  final UsecaseCreateInitialSettings usecaseCreateInitialSettings;
 
   ControllerHome({
     //Settings usecases
     required this.usecaseChangeSettings,
     required this.usecaseDefaultSettings,
     required this.usecaseLoadSettings,
+    required this.usecaseCreateInitialSettings,
     //Release usecases
     required this.usecaseDeleteRelease,
     required this.usecaseDeleteAllRelease,
@@ -76,6 +79,21 @@ class ControllerHome extends ChangeNotifier {
 
   //-------------Setting-----------------
 
+  Future<void> createSettings() async {
+    final result = await usecaseCreateInitialSettings.call();
+    if (result.exptData != ExptDataNoExpt()) {
+      globalState = ControllerStateError();
+      notifyListeners();
+      throw result.exptData;
+    }
+    if (result.exptService != ExptServiceNoExpt()) {
+      globalState = ControllerStateError();
+      notifyListeners();
+      throw result.exptService;
+    }
+    loadSettings();
+  }
+
   Future<Settings> loadSettings() async {
     globalState = ControllerStateLoading(tr('settings.loading'));
     //notifyListeners();
@@ -83,8 +101,8 @@ class ControllerHome extends ChangeNotifier {
     if (result.exception != ExptDataNoExpt()) {
       globalState = ControllerStateError(result.exception.toString());
       notifyListeners();
-     // throw result.exception;
-     return SettingsModel.newObject();
+      // throw result.exception;
+      return SettingsModel.newObject();
     }
     globalState = ControllerStateLoaded();
     settings = result.settings;

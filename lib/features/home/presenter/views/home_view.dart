@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fegi/core/constants.dart';
+import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
 import 'package:fegi/core/helpers/dialog_helper.dart';
 import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
@@ -12,7 +13,6 @@ import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
 
 import '../widgets/appbar_widget.dart';
-import '../widgets/config_now_widget.dart';
 import '../widgets/getsdk_table_widget.dart';
 import '../widgets/available_releases/available_releases_widget.dart';
 
@@ -73,25 +73,27 @@ class _HomeViewState extends State<HomeView> with WindowListener {
             context.setLocale(const Locale('pt', 'PT'));
           }
 
+          if (globalReleaseState != ControllerStateLoaded()) {
+            controller.createSettings();
+            return const ErrorViewWidget(
+              error: 'Problem to create settings config',
+            );
+          }
+
           return UpgradeAlert(
             upgrader: Upgrader(appcastConfig: appcastConfig),
             child: Scaffold(
               appBar: const AppbarWidget(title: App.describe),
-              body: switch (globalReleaseState) {
-                ControllerStateLoaded() => const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: AvailableReleasesWidget(),
-                  ),
-                _ => const ConfigNowWidget(),
-              },
+              body: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: AvailableReleasesWidget(),
+              ),
               bottomNavigationBar: BformFooter(
                 leftChild: BformButton(
                   label: tr('home.getSdk'),
                   style: BformButtonStyle.outlined,
                   colors: [color],
-                  onPressed: globalReleaseState != ControllerStateLoaded()
-                      ? null
-                      : () async {
+                  onPressed: () async {
                           bool dialog = await dialogHelper(
                             title: tr('home.getSdk'),
                             context: context,
@@ -108,9 +110,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                     label: tr('home.downloadAll'),
                     style: BformButtonStyle.outlined,
                     colors: [color],
-                    onPressed: globalReleaseState != ControllerStateLoaded()
-                        ? null
-                        : () async {
+                    onPressed: () async {
                             bool dialog = await dialogHelper(
                               context: context,
                               title: tr('home.donwloadAllTitle'),
@@ -126,9 +126,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                     label: tr('home.deleteAll'),
                     style: BformButtonStyle.outlined,
                     colors: [color],
-                    onPressed: globalReleaseState != ControllerStateLoaded()
-                        ? null
-                        : () async {
+                    onPressed:  () async {
                             bool dialog = await dialogHelper(
                               context: context,
                               title: tr('home.deleteAllTitle'),

@@ -23,15 +23,7 @@ import '../features/home/infra/repositories/repository_local_settings_impl.dart'
 import '../features/home/infra/repositories/repository_remote_release_impl.dart';
 import '../features/home/presenter/controllers/controller_home.dart';
 import '../features/home/domain/repositories/repository_local_settings.dart';
-import '../features/startup/domain/repositories/repository_local_startup.dart';
-import '../features/startup/domain/repositories/repository_remote_startup.dart';
-import '../features/startup/domain/usecases/usecase_create_initial_settings.dart';
-import '../features/startup/domain/usecases/usecase_download_initial_release.dart';
-import '../features/startup/domain/usecases/usecase_install_initial_release.dart';
-import '../features/startup/domain/usecases/usecase_setglobal_initial_release.dart';
-import '../features/startup/infra/repositories/repository_local_startup_impl.dart';
-import '../features/startup/infra/repositories/repository_remote_startup_impl.dart';
-import '../features/startup/presenter/controllers/controller_startup.dart';
+import '../features/home/domain/usecases/usecase_create_initial_settings.dart';
 import 'feature/external/datasources/data_http_dio.dart';
 import 'feature/external/datasources/data_local_shared_pref.dart';
 import 'feature/external/services/service_compress_archive_io.dart';
@@ -52,7 +44,7 @@ final providersApp = [
   Provider<ServiceCompress>(create: (_) => ServiceCompressArchiveIo()),
 
   /// features providers
-
+/*
   /// * startup providers
   /// ** repository
   Provider<RepositoryLocalStartup>(
@@ -63,12 +55,6 @@ final providersApp = [
   ),
 
   /// ** usecase
-  Provider(
-    create: (context) => UsecaseCreateInitialSettings(
-      repositoryLocal: context.read(),
-      serviceOs: context.read(),
-    ),
-  ),
   Provider(
     create: ((context) => UsecaseDownloadInitialReleases(
           repositoryRemote: context.read(),
@@ -98,7 +84,7 @@ final providersApp = [
       usecaseSetglobalInitialRelease: context.read(),
     ),
   ),
-
+*/
   /// * settings providers
   /// ** repository
   Provider<RepositoryLocalSettings>(
@@ -111,7 +97,6 @@ final providersApp = [
   Provider(create: (context) => UsecaseChangeSettings(context.read())),
   Provider(create: (context) => UsecaseLoadSettings(context.read())),
   Provider(create: (context) => UsecaseSetdefaultSettings(context.read())),
-
 
   /// * home providers
   /// ** repository
@@ -178,6 +163,12 @@ final providersApp = [
     ),
   ),
   Provider(create: (context) => UsecaseRemoveRelease(context.read())),
+  Provider(
+    create: (context) => UsecaseCreateInitialSettings(
+      repositoryLocal: context.read(),
+      serviceOs: context.read(),
+    ),
+  ),
 
   /// ** controller
   ChangeNotifierProvider(
@@ -198,6 +189,7 @@ final providersApp = [
       usecaseLoadSettings: context.read(),
       usecaseChangeSettings: context.read(),
       usecaseDefaultSettings: context.read(),
+      usecaseCreateInitialSettings: context.read(),
     ),
   )
 ];
