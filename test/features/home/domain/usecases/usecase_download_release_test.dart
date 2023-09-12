@@ -1,6 +1,4 @@
-import 'package:fegi/core/exceptions/expt_data.dart';
-import 'package:fegi/core/exceptions/expt_service.dart';
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 import 'package:fegi/core/feature/infra/services/service_file.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_release.dart';

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:fegi/core/exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 
 import '../../infra/services/service_file.dart';
 

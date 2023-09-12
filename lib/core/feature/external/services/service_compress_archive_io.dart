@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:archive/archive_io.dart';
 
-import '../../../exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 import '../../infra/services/service_compress.dart';
 
 class ServiceCompressArchiveIo implements ServiceCompress {

@@ -43,48 +43,6 @@ final providersApp = [
   Provider<ServiceFile>(create: (_) => ServiceFileImpl()),
   Provider<ServiceCompress>(create: (_) => ServiceCompressArchiveIo()),
 
-  /// features providers
-/*
-  /// * startup providers
-  /// ** repository
-  Provider<RepositoryLocalStartup>(
-    create: (context) => RepositoryLocalStartupImpl(context.read()),
-  ),
-  Provider<RepositoryRemoteStartup>(
-    create: (context) => RepositoryRemoteStartupImpl(context.read()),
-  ),
-
-  /// ** usecase
-  Provider(
-    create: ((context) => UsecaseDownloadInitialReleases(
-          repositoryRemote: context.read(),
-          serviceFile: context.read(),
-        )),
-  ),
-  Provider(
-    create: ((context) => UsecaseInstallInitialRelease(
-          repositoryLocal: context.read(),
-          serviceCompress: context.read(),
-        )),
-  ),
-  Provider(
-    create: ((context) => UsecaseSetglobalInitialRelease(
-          serviceFile: context.read(),
-          serviceOs: context.read(),
-          repositoryLocal: context.read(),
-        )),
-  ),
-
-  /// ** controller
-  ChangeNotifierProvider(
-    create: (context) => ControllerStartup(
-      usecaseCreateInitialSettings: context.read(),
-      usecaseDownloadInitialReleases: context.read(),
-      usecaseInstallInitialRelease: context.read(),
-      usecaseSetglobalInitialRelease: context.read(),
-    ),
-  ),
-*/
   /// * settings providers
   /// ** repository
   Provider<RepositoryLocalSettings>(

@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/constants.dart';
 
 import '../../../../core/feature/domain/entities/sdk_release.dart';

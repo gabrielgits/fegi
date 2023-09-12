@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 
 abstract class ServiceOs {
   ExptService createEnvPath({required String path, required String key, required String value});

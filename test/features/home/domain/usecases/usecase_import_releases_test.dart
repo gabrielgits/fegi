@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_data.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_release.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_import_releases.dart';
 import 'package:flutter_test/flutter_test.dart';

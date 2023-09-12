@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
 import 'package:fegi/features/home/domain/repositories/repository_remote_release.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_get_list_releases.dart';

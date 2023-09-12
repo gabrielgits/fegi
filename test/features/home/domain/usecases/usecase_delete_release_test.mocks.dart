@@ -5,12 +5,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i6;
 
-import 'package:fegi/core/exceptions/expt_data.dart' as _i3;
-import 'package:fegi/core/exceptions/expt_service.dart' as _i2;
-import 'package:fegi/core/feature/domain/entities/sdk_release.dart' as _i4;
-import 'package:fegi/core/feature/infra/services/service_file.dart' as _i5;
+import 'package:expt/expt.dart' as _i2;
+import 'package:fegi/core/feature/domain/entities/sdk_release.dart' as _i3;
+import 'package:fegi/core/feature/infra/services/service_file.dart' as _i4;
 import 'package:fegi/features/home/domain/repositories/repository_local_release.dart'
-    as _i7;
+    as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -34,7 +33,7 @@ class _FakeExptService_0 extends _i1.SmartFake implements _i2.ExptService {
         );
 }
 
-class _FakeExptData_1 extends _i1.SmartFake implements _i3.ExptData {
+class _FakeExptData_1 extends _i1.SmartFake implements _i2.ExptData {
   _FakeExptData_1(
     Object parent,
     Invocation parentInvocation,
@@ -44,7 +43,7 @@ class _FakeExptData_1 extends _i1.SmartFake implements _i3.ExptData {
         );
 }
 
-class _FakeSdkRelease_2 extends _i1.SmartFake implements _i4.SdkRelease {
+class _FakeSdkRelease_2 extends _i1.SmartFake implements _i3.SdkRelease {
   _FakeSdkRelease_2(
     Object parent,
     Invocation parentInvocation,
@@ -57,7 +56,7 @@ class _FakeSdkRelease_2 extends _i1.SmartFake implements _i4.SdkRelease {
 /// A class which mocks [ServiceFile].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockServiceFile extends _i1.Mock implements _i5.ServiceFile {
+class MockServiceFile extends _i1.Mock implements _i4.ServiceFile {
   @override
   _i2.ExptService deleteFile(String? path) => (super.noSuchMethod(
         Invocation.method(
@@ -165,44 +164,22 @@ class MockServiceFile extends _i1.Mock implements _i5.ServiceFile {
           path: ''
         ),
       ) as ({_i2.ExptService exptService, String path}));
-  @override
-  _i6.Future<_i2.ExptService> openUrl(String? link) => (super.noSuchMethod(
-        Invocation.method(
-          #openUrl,
-          [link],
-        ),
-        returnValue: _i6.Future<_i2.ExptService>.value(_FakeExptService_0(
-          this,
-          Invocation.method(
-            #openUrl,
-            [link],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i6.Future<_i2.ExptService>.value(_FakeExptService_0(
-          this,
-          Invocation.method(
-            #openUrl,
-            [link],
-          ),
-        )),
-      ) as _i6.Future<_i2.ExptService>);
 }
 
 /// A class which mocks [RepositoryLocalRelease].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRepositoryLocalRelease extends _i1.Mock
-    implements _i7.RepositoryLocalRelease {
+    implements _i5.RepositoryLocalRelease {
   @override
-  _i6.Future<({_i3.ExptData exception, int id})> addRelease(
-          _i4.SdkRelease? release) =>
+  _i6.Future<({_i2.ExptData exception, int id})> addRelease(
+          _i3.SdkRelease? release) =>
       (super.noSuchMethod(
         Invocation.method(
           #addRelease,
           [release],
         ),
-        returnValue: _i6.Future<({_i3.ExptData exception, int id})>.value((
+        returnValue: _i6.Future<({_i2.ExptData exception, int id})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -213,7 +190,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           id: 0
         )),
         returnValueForMissingStub:
-            _i6.Future<({_i3.ExptData exception, int id})>.value((
+            _i6.Future<({_i2.ExptData exception, int id})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -223,16 +200,16 @@ class MockRepositoryLocalRelease extends _i1.Mock
           ),
           id: 0
         )),
-      ) as _i6.Future<({_i3.ExptData exception, int id})>);
+      ) as _i6.Future<({_i2.ExptData exception, int id})>);
   @override
-  _i6.Future<({int count, _i3.ExptData exception})> addListReleases(
-          List<_i4.SdkRelease>? releases) =>
+  _i6.Future<({int count, _i2.ExptData exception})> addListReleases(
+          List<_i3.SdkRelease>? releases) =>
       (super.noSuchMethod(
         Invocation.method(
           #addListReleases,
           [releases],
         ),
-        returnValue: _i6.Future<({int count, _i3.ExptData exception})>.value((
+        returnValue: _i6.Future<({int count, _i2.ExptData exception})>.value((
           count: 0,
           exception: _FakeExptData_1(
             this,
@@ -243,7 +220,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           )
         )),
         returnValueForMissingStub:
-            _i6.Future<({int count, _i3.ExptData exception})>.value((
+            _i6.Future<({int count, _i2.ExptData exception})>.value((
           count: 0,
           exception: _FakeExptData_1(
             this,
@@ -253,10 +230,10 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
           )
         )),
-      ) as _i6.Future<({int count, _i3.ExptData exception})>);
+      ) as _i6.Future<({int count, _i2.ExptData exception})>);
   @override
   _i6.Future<
-      ({_i3.ExptData exception, _i4.SdkRelease release})> updateReleaseState({
+      ({_i2.ExptData exception, _i3.SdkRelease release})> updateReleaseState({
     required int? id,
     required int? state,
   }) =>
@@ -270,7 +247,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           },
         ),
         returnValue: _i6
-            .Future<({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+            .Future<({_i2.ExptData exception, _i3.SdkRelease release})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -295,7 +272,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           )
         )),
         returnValueForMissingStub: _i6
-            .Future<({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+            .Future<({_i2.ExptData exception, _i3.SdkRelease release})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -319,9 +296,9 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
           )
         )),
-      ) as _i6.Future<({_i3.ExptData exception, _i4.SdkRelease release})>);
+      ) as _i6.Future<({_i2.ExptData exception, _i3.SdkRelease release})>);
   @override
-  _i6.Future<({_i3.ExptData exception, List<_i4.SdkRelease> releases})>
+  _i6.Future<({_i2.ExptData exception, List<_i3.SdkRelease> releases})>
       updateListReleaseState({
     required int? fromState,
     required int? toState,
@@ -337,8 +314,8 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
             returnValue: _i6.Future<
                 ({
-                  _i3.ExptData exception,
-                  List<_i4.SdkRelease> releases
+                  _i2.ExptData exception,
+                  List<_i3.SdkRelease> releases
                 })>.value((
               exception: _FakeExptData_1(
                 this,
@@ -351,12 +328,12 @@ class MockRepositoryLocalRelease extends _i1.Mock
                   },
                 ),
               ),
-              releases: <_i4.SdkRelease>[]
+              releases: <_i3.SdkRelease>[]
             )),
             returnValueForMissingStub: _i6.Future<
                 ({
-                  _i3.ExptData exception,
-                  List<_i4.SdkRelease> releases
+                  _i2.ExptData exception,
+                  List<_i3.SdkRelease> releases
                 })>.value((
               exception: _FakeExptData_1(
                 this,
@@ -369,18 +346,18 @@ class MockRepositoryLocalRelease extends _i1.Mock
                   },
                 ),
               ),
-              releases: <_i4.SdkRelease>[]
+              releases: <_i3.SdkRelease>[]
             )),
           ) as _i6.Future<
-              ({_i3.ExptData exception, List<_i4.SdkRelease> releases})>);
+              ({_i2.ExptData exception, List<_i3.SdkRelease> releases})>);
   @override
-  _i6.Future<({_i3.ExptData exception, int id})> deleteRelease(int? id) =>
+  _i6.Future<({_i2.ExptData exception, int id})> deleteRelease(int? id) =>
       (super.noSuchMethod(
         Invocation.method(
           #deleteRelease,
           [id],
         ),
-        returnValue: _i6.Future<({_i3.ExptData exception, int id})>.value((
+        returnValue: _i6.Future<({_i2.ExptData exception, int id})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -391,7 +368,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           id: 0
         )),
         returnValueForMissingStub:
-            _i6.Future<({_i3.ExptData exception, int id})>.value((
+            _i6.Future<({_i2.ExptData exception, int id})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -401,15 +378,15 @@ class MockRepositoryLocalRelease extends _i1.Mock
           ),
           id: 0
         )),
-      ) as _i6.Future<({_i3.ExptData exception, int id})>);
+      ) as _i6.Future<({_i2.ExptData exception, int id})>);
   @override
-  _i6.Future<({int count, _i3.ExptData exception})> deleteAllRelease() =>
+  _i6.Future<({int count, _i2.ExptData exception})> deleteAllRelease() =>
       (super.noSuchMethod(
         Invocation.method(
           #deleteAllRelease,
           [],
         ),
-        returnValue: _i6.Future<({int count, _i3.ExptData exception})>.value((
+        returnValue: _i6.Future<({int count, _i2.ExptData exception})>.value((
           count: 0,
           exception: _FakeExptData_1(
             this,
@@ -420,7 +397,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           )
         )),
         returnValueForMissingStub:
-            _i6.Future<({int count, _i3.ExptData exception})>.value((
+            _i6.Future<({int count, _i2.ExptData exception})>.value((
           count: 0,
           exception: _FakeExptData_1(
             this,
@@ -430,9 +407,9 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
           )
         )),
-      ) as _i6.Future<({int count, _i3.ExptData exception})>);
+      ) as _i6.Future<({int count, _i2.ExptData exception})>);
   @override
-  _i6.Future<({_i3.ExptData exception, List<_i4.SdkRelease> releases})>
+  _i6.Future<({_i2.ExptData exception, List<_i3.SdkRelease> releases})>
       loadListRelease() => (super.noSuchMethod(
             Invocation.method(
               #loadListRelease,
@@ -440,8 +417,8 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
             returnValue: _i6.Future<
                 ({
-                  _i3.ExptData exception,
-                  List<_i4.SdkRelease> releases
+                  _i2.ExptData exception,
+                  List<_i3.SdkRelease> releases
                 })>.value((
               exception: _FakeExptData_1(
                 this,
@@ -450,12 +427,12 @@ class MockRepositoryLocalRelease extends _i1.Mock
                   [],
                 ),
               ),
-              releases: <_i4.SdkRelease>[]
+              releases: <_i3.SdkRelease>[]
             )),
             returnValueForMissingStub: _i6.Future<
                 ({
-                  _i3.ExptData exception,
-                  List<_i4.SdkRelease> releases
+                  _i2.ExptData exception,
+                  List<_i3.SdkRelease> releases
                 })>.value((
               exception: _FakeExptData_1(
                 this,
@@ -464,19 +441,19 @@ class MockRepositoryLocalRelease extends _i1.Mock
                   [],
                 ),
               ),
-              releases: <_i4.SdkRelease>[]
+              releases: <_i3.SdkRelease>[]
             )),
           ) as _i6.Future<
-              ({_i3.ExptData exception, List<_i4.SdkRelease> releases})>);
+              ({_i2.ExptData exception, List<_i3.SdkRelease> releases})>);
   @override
-  _i6.Future<({_i3.ExptData exception, _i4.SdkRelease release})>
+  _i6.Future<({_i2.ExptData exception, _i3.SdkRelease release})>
       loadGlobalRelease() => (super.noSuchMethod(
             Invocation.method(
               #loadGlobalRelease,
               [],
             ),
             returnValue: _i6.Future<
-                ({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+                ({_i2.ExptData exception, _i3.SdkRelease release})>.value((
               exception: _FakeExptData_1(
                 this,
                 Invocation.method(
@@ -493,7 +470,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
               )
             )),
             returnValueForMissingStub: _i6.Future<
-                ({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+                ({_i2.ExptData exception, _i3.SdkRelease release})>.value((
               exception: _FakeExptData_1(
                 this,
                 Invocation.method(
@@ -509,18 +486,18 @@ class MockRepositoryLocalRelease extends _i1.Mock
                 ),
               )
             )),
-          ) as _i6.Future<({_i3.ExptData exception, _i4.SdkRelease release})>);
+          ) as _i6.Future<({_i2.ExptData exception, _i3.SdkRelease release})>);
   @override
   _i6.Future<
-      ({_i3.ExptData exception, _i4.SdkRelease release})> updateGlobalRelease(
-          _i4.SdkRelease? sdkVersion) =>
+      ({_i2.ExptData exception, _i3.SdkRelease release})> updateGlobalRelease(
+          _i3.SdkRelease? sdkVersion) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateGlobalRelease,
           [sdkVersion],
         ),
         returnValue: _i6
-            .Future<({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+            .Future<({_i2.ExptData exception, _i3.SdkRelease release})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -537,7 +514,7 @@ class MockRepositoryLocalRelease extends _i1.Mock
           )
         )),
         returnValueForMissingStub: _i6
-            .Future<({_i3.ExptData exception, _i4.SdkRelease release})>.value((
+            .Future<({_i2.ExptData exception, _i3.SdkRelease release})>.value((
           exception: _FakeExptData_1(
             this,
             Invocation.method(
@@ -553,5 +530,5 @@ class MockRepositoryLocalRelease extends _i1.Mock
             ),
           )
         )),
-      ) as _i6.Future<({_i3.ExptData exception, _i4.SdkRelease release})>);
+      ) as _i6.Future<({_i2.ExptData exception, _i3.SdkRelease release})>);
 }

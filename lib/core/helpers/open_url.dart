@@ -7,8 +7,7 @@ Future<bool> openUrl(String link) async {
   try {
    return await launchUrl(url);
   }
- on PlatformException catch (e) {
-  print(e);
+ on PlatformException {
    return false;
  }
 }

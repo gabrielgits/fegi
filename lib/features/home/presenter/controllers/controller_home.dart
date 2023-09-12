@@ -1,9 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 import 'package:fegi/core/states/controller_state.dart';
-import 'package:fegi/core/exceptions/expt_data.dart';
-import 'package:fegi/core/exceptions/expt_service.dart';
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/states/sdk_state.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_create_initial_settings.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_delete_all_releases.dart';

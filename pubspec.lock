@@ -242,6 +242,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.5"
+  expt:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "5e630bea6ee73cf904ec1a6cc378519d79e9c3c4"
+      url: "https://github.com/gabrielgits/expt.git"
+    source: git
+    version: "0.1.1"
   fake_async:
     dependency: transitive
     description:
@@ -948,5 +957,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.1.0-185.0.dev <4.0.0"
+  dart: ">=3.1.0 <4.0.0"
   flutter: ">=3.10.0"

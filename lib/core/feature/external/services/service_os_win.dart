@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:fegi/core/exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 import 'package:win32_registry/win32_registry.dart';
 import '../../infra/services/service_os.dart';
 

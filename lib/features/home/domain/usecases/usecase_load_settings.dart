@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_data.dart';
+import 'package:expt/expt.dart';
 
 import '../../../home/domain/entities/settings.dart';
 import '../../../home/domain/repositories/repository_local_settings.dart';

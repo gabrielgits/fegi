@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/external/services/service_os_win.dart';
 import 'package:flutter_test/flutter_test.dart';
 

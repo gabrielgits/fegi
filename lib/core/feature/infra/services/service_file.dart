@@ -1,4 +1,4 @@
-import '../../../exceptions/expt_service.dart';
+import 'package:expt/expt.dart';
 
 abstract class ServiceFile {
   ExptService deleteFile(String path);

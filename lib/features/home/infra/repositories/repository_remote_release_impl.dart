@@ -1,7 +1,7 @@
 
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
 import 'package:fegi/core/feature/infra/datasources/data_http.dart';
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 
 import '../../domain/repositories/repository_remote_release.dart';

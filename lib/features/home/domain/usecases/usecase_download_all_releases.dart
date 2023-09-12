@@ -1,7 +1,5 @@
 import 'package:fegi/core/constants.dart';
-import 'package:fegi/core/exceptions/expt_data.dart';
-import 'package:fegi/core/exceptions/expt_service.dart';
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/services/service_file.dart';
 import 'package:fegi/core/states/sdk_state.dart';
 

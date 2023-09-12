@@ -1,4 +1,4 @@
-import 'package:fegi/core/exceptions/expt_web.dart';
+import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/datasources/data_http.dart';
 import 'package:fegi/features/home/domain/repositories/repository_remote_release.dart';
 import 'package:fegi/features/home/infra/repositories/repository_remote_release_impl.dart';

@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:fegi/core/exceptions/expt_web.dart' as _i2;
+import 'package:expt/expt.dart' as _i2;
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart' as _i5;
 import 'package:fegi/features/home/domain/repositories/repository_remote_release.dart'
     as _i3;
