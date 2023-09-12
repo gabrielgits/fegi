@@ -30,32 +30,31 @@ class _SettingsFormWidgetState extends State<SettingsFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = context.watch<ControllerHome>();
-
-    return switch (controller.controllerState) {
-      ControllerStateLoading() => LoadingViewWidget(
-          info: controller.controllerState.toString(),
-        ),
-      ControllerStateEmpty() => Column(
-        children: [
-          Text(
-            tr('msn.noConfig'),
-          ),
-          const SizedBox(height: 10),
-          BformButton(
-            label: tr('btn.back'),
-            onPressed: () {
-              Navigator.pop(context);
-            }
-          )
-        ]
-      ),
-      ControllerStateLoaded() => BformForm(
-          width: 300,
-          border: Border.all(color: Theme.of(context).colorScheme.primary),
-          child: Column(
-            children: [
-              /*
+    return Selector<ControllerHome, ControllerState>(
+      selector: (context, controller) => controller.globalState,
+      builder: (context, globalState, _) {
+        final controller = context.read<ControllerHome>();
+        return switch (globalState) {
+          ControllerStateLoading() => LoadingViewWidget(
+              info: globalState.toString(),
+            ),
+          ControllerStateEmpty() => Column(children: [
+              Text(
+                tr('msn.noConfig'),
+              ),
+              const SizedBox(height: 10),
+              BformButton(
+                  label: tr('btn.back'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  })
+            ]),
+          ControllerStateLoaded() => BformForm(
+              width: 300,
+              border: Border.all(color: Theme.of(context).colorScheme.primary),
+              child: Column(
+                children: [
+                  /*
               BformCheckbox(
                 label: tr('settings.runStartup'),
                 inicialState: controller.settings.windowsStart,
@@ -68,31 +67,32 @@ class _SettingsFormWidgetState extends State<SettingsFormWidget> {
               ),
               const SizedBox(height: 10),
               */
-              BformCheckbox(
-                label: tr('settings.startupMinimized'),
-                onChange: (value) {
-                  controller.settings = controller.settings.copyWith(
-                    startMini: value,
-                  );
-                },
-                inicialState: controller.settings.startMini,
-              ),
-              const SizedBox(height: 10),
-              BformGroupRadio(
-                label: tr('settings.languages'),
-                listItems: listLanguages,
-                item: listLanguages.firstWhere(
-                  (element) => element.id == controller.settings.currentLang,
-                  orElse: () => listLanguages.first,
-                ),
-                onChange: (item) {
-                 controller.settings = controller.settings.copyWith(
-                     currentLang: item.id,
-                   );
-                },
-              ),
-              const SizedBox(height: 10),
-              /*
+                  BformCheckbox(
+                    label: tr('settings.startupMinimized'),
+                    onChange: (value) {
+                      controller.settings = controller.settings.copyWith(
+                        startMini: value,
+                      );
+                    },
+                    inicialState: controller.settings.startMini,
+                  ),
+                  const SizedBox(height: 10),
+                  BformGroupRadio(
+                    label: tr('settings.languages'),
+                    listItems: listLanguages,
+                    item: listLanguages.firstWhere(
+                      (element) =>
+                          element.id == controller.settings.currentLang,
+                      orElse: () => listLanguages.first,
+                    ),
+                    onChange: (item) {
+                      controller.settings = controller.settings.copyWith(
+                        currentLang: item.id,
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  /*
                         BformSelect(
                             label: tr('settings.editors'),
                             listItems: listEditors,
@@ -115,10 +115,12 @@ class _SettingsFormWidgetState extends State<SettingsFormWidget> {
                     ],
                   )
                   */
-            ],
-          ),
-        ),
-      _ => ErrorViewWidget(error: controller.controllerState.toString()),
-    };
+                ],
+              ),
+            ),
+          _ => ErrorViewWidget(error: globalState.toString()),
+        };
+      },
+    );
   }
 }

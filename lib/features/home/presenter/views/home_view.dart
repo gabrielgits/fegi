@@ -81,7 +81,10 @@ class _HomeViewState extends State<HomeView> with WindowListener {
           }
 
           return UpgradeAlert(
-            upgrader: Upgrader(appcastConfig: appcastConfig),
+            upgrader: Upgrader(
+              appcastConfig: appcastConfig,
+              showLater: false,
+            ),
             child: Scaffold(
               appBar: const AppbarWidget(title: App.describe),
               body: const Padding(
@@ -94,50 +97,50 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                   style: BformButtonStyle.outlined,
                   colors: [color],
                   onPressed: () async {
-                          bool dialog = await dialogHelper(
-                            title: tr('home.getSdk'),
-                            context: context,
-                            content: const GetsdkTableWidget(),
-                            yesButton: tr('btn.get'),
-                            noButton: tr('btn.cancel'),
-                          );
-                          if (dialog) {
-                            controller.importReleases();
-                          }
-                        },
+                    bool dialog = await dialogHelper(
+                      title: tr('home.getSdk'),
+                      context: context,
+                      content: const GetsdkTableWidget(),
+                      yesButton: tr('btn.get'),
+                      noButton: tr('btn.cancel'),
+                    );
+                    if (dialog) {
+                      controller.importReleases();
+                    }
+                  },
                 ),
                 middleChild: BformButton(
                     label: tr('home.downloadAll'),
                     style: BformButtonStyle.outlined,
                     colors: [color],
                     onPressed: () async {
-                            bool dialog = await dialogHelper(
-                              context: context,
-                              title: tr('home.donwloadAllTitle'),
-                              content: Text(tr('home.downloadAllAsk')),
-                              yesButton: tr('btn.yes'),
-                              noButton: tr('btn.no'),
-                            );
-                            if (dialog) {
-                              controller.downloadAllReleases();
-                            }
-                          }),
+                      bool dialog = await dialogHelper(
+                        context: context,
+                        title: tr('home.donwloadAllTitle'),
+                        content: Text(tr('home.downloadAllAsk')),
+                        yesButton: tr('btn.yes'),
+                        noButton: tr('btn.no'),
+                      );
+                      if (dialog) {
+                        controller.downloadAllReleases();
+                      }
+                    }),
                 rightChild: BformButton(
                     label: tr('home.deleteAll'),
                     style: BformButtonStyle.outlined,
                     colors: [color],
-                    onPressed:  () async {
-                            bool dialog = await dialogHelper(
-                              context: context,
-                              title: tr('home.deleteAllTitle'),
-                              content: Text(tr('home.deleteAllAsk')),
-                              yesButton: tr('btn.yes'),
-                              noButton: tr('btn.no'),
-                            );
-                            if (dialog) {
-                              controller.deleteAllReleases();
-                            }
-                          }),
+                    onPressed: () async {
+                      bool dialog = await dialogHelper(
+                        context: context,
+                        title: tr('home.deleteAllTitle'),
+                        content: Text(tr('home.deleteAllAsk')),
+                        yesButton: tr('btn.yes'),
+                        noButton: tr('btn.no'),
+                      );
+                      if (dialog) {
+                        controller.deleteAllReleases();
+                      }
+                    }),
               ),
             ),
           );
