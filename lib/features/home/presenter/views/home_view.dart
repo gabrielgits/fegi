@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:alertshow/alertshow.dart';
 import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fegi/core/constants.dart';
 import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
-import 'package:fegi/core/helpers/dialog_helper.dart';
 import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +97,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                   style: BformButtonStyle.outlined,
                   colors: [color],
                   onPressed: () async {
-                    bool dialog = await dialogHelper(
+                    bool dialog = await alertshowDialog(
                       title: tr('home.getSdk'),
                       context: context,
                       content: const GetsdkTableWidget(),
@@ -114,7 +114,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                     style: BformButtonStyle.outlined,
                     colors: [color],
                     onPressed: () async {
-                      bool dialog = await dialogHelper(
+                      bool dialog = await alertshowDialog(
                         context: context,
                         title: tr('home.donwloadAllTitle'),
                         content: Text(tr('home.downloadAllAsk')),
@@ -130,7 +130,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
                     style: BformButtonStyle.outlined,
                     colors: [color],
                     onPressed: () async {
-                      bool dialog = await dialogHelper(
+                      bool dialog = await alertshowDialog(
                         context: context,
                         title: tr('home.deleteAllTitle'),
                         content: Text(tr('home.deleteAllAsk')),
@@ -156,7 +156,7 @@ class _HomeViewState extends State<HomeView> with WindowListener {
   void onWindowClose() async {
     bool isPreventClose = await windowManager.isPreventClose();
     if (isPreventClose) {
-      bool dialog = await dialogHelper(
+      bool dialog = await alertshowDialog(
         context: context,
         title: tr('home.closeWindow'),
         content: Text(tr('msn.closeWindow')),

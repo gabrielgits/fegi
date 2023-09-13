@@ -83,6 +83,7 @@ This APP has the following dependencies:
 
 ### ui:
 - [bform](https://pub.dev/packages/bform): Form UI components.
+- [alertshow](https://github.com/gabrielgits/alertshow.git): Show diferents alert message.
 
 ### utils:
 - [easy_localization](https://pub.dev/packages/easy_localization): Localization and Internationalization.

@@ -1,5 +1,5 @@
+import 'package:alertshow/alertshow.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:fegi/core/helpers/dialog_helper.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +31,7 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.settings),
           tooltip: tr('home.settings'),
           onPressed: () async {
-            bool dialog = await dialogHelper(
+            bool dialog = await alertshowDialog(
               title: tr('settings.title'),
               context: context,
               content: const SettingsFormWidget(),

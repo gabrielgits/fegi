@@ -1,9 +1,9 @@
+import 'package:alertshow/alertshow.dart';
 import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
 import 'package:fegi/core/feature/presenter/widgets/loading_view_widget.dart';
 import 'package:fegi/core/helpers/date_helper.dart';
-import 'package:fegi/core/helpers/dialog_helper.dart';
 import 'package:fegi/core/helpers/open_url.dart';
 import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
@@ -48,7 +48,7 @@ class _AvailableReleasesWidgetState extends State<AvailableReleasesWidget> {
               tooltip: tr('tools.title'),
               icon: const Icon(Icons.apps),
               onPressed: () async {
-                await dialogHelper(
+                await alertshowDialog(
                   title: tr('tools.title'),
                   context: context,
                   content: const ToolsWidget(),
