@@ -26,7 +26,7 @@ FEGI is designed for everyone who wants to efficiently configure their environme
 ## Prerequisites:
 
 ### Windows
-- [vc_redist.x64](https://www.microsoft.com/en-US/download/details.aspx?id=48145): Visual C++ Redistributable for Visual Studio 2015.
+- [vc_redist.x64 14 MB](https://www.microsoft.com/en-US/download/details.aspx?id=48145): Visual C++ Redistributable for Visual Studio 2015.
 
 
 ## How to install:
