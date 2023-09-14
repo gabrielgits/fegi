@@ -23,6 +23,12 @@ FEGI is designed for everyone who wants to efficiently configure their environme
   </p>
 </div>
 
+## Prerequisites:
+
+### Windows
+- [vc_redist.x64](https://www.microsoft.com/en-US/download/details.aspx?id=48145): Visual C++ Redistributable for Visual Studio 2015.
+
+
 ## How to install:
 
 Just download the setup file from the link above and run it.
@@ -36,7 +42,7 @@ Just download the setup file from the link above and run it.
 
 ## How to Use:
 
-Just download the setup file from the link above and run it.
+Click in Get SDK to start.
 
 <p align="center">
 <a align="center"><img width="450" height="400" src="./setup/screenshot/use_win.png" /></a>
