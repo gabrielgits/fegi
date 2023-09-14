@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Fegi"
-#define MyAppVersion "0.2.5"
+#define MyAppVersion "0.2.7"
 #define MyAppPublisher "Gabriel Vieira"
 #define MyAppURL "https://www.gabrielvieira.ao"
 #define MyAppExeName "fegi.exe"
@@ -44,7 +44,6 @@ Source: "..\..\build\windows\runner\Release\screen_retriever_plugin.dll"; DestDi
 Source: "..\..\build\windows\runner\Release\system_tray_plugin.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\build\windows\runner\Release\url_launcher_windows_plugin.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\build\windows\runner\Release\window_manager_plugin.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "msvcp140.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "vcruntime140_1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "vcruntime140.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
