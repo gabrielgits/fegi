@@ -125,8 +125,7 @@ class RepositoryLocalReleaseImpl implements RepositoryLocalRelease {
   }
 
   @override
-  Future<({ExptData exception, List<SdkRelease> releases})>
-      loadListRelease() async {
+  Future<({ExptData exception, List<SdkRelease> releases})> loadListRelease() async {
     try {
       final items = await datasource.getAll(tableListSdkReleases);
       final list = items.map((e) => SdkReleaseModel.fromMap(e)).toList();

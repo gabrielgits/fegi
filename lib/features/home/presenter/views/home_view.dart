@@ -33,6 +33,9 @@ class _HomeViewState extends State<HomeView> with WindowListener {
         final controller = context.read<ControllerHome>();
         //await controller.loadGlobalRelease();
         final settings = await controller.loadSettings();
+        if (settings.id == 0) {
+          controller.createSettings();
+        }
         await windowManager.setPreventClose(true);
         if (settings.startMini) {
           await windowManager.waitUntilReadyToShow(null, () async {
@@ -73,10 +76,11 @@ class _HomeViewState extends State<HomeView> with WindowListener {
             context.setLocale(const Locale('pt', 'PT'));
           }
 
-          if (globalReleaseState != ControllerStateLoaded()) {
-            controller.createSettings();
-            return const ErrorViewWidget(
-              error: 'Problem to create settings config',
+          if (controller.globalState != ControllerStateLoaded()) {
+            return const Scaffold(
+              body: ErrorViewWidget(
+                error: 'Cannot create settings config',
+              ),
             );
           }
 
