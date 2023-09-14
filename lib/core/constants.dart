@@ -2,8 +2,7 @@ class App {
   //app
   static const debug = false;
   static const name = 'fegi';
-  static const version = '0.2';
-  static const versionCode = 2;
+  static const version = '0.3';
   static const describe = 'Flutter Easy GUI Install ver. $version';
   static const copyrith = 'Copyright © 2023 GV.';
   static const dev = 'GV';
