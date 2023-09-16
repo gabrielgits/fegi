@@ -80,12 +80,12 @@ class ControllerHome extends ChangeNotifier {
   Future<void> createSettings() async {
     final result = await usecaseCreateInitialSettings.call();
     if (result.exptData != ExptDataNoExpt()) {
-      globalState = ControllerStateError();
+      globalState = ControllerStateError(tr('msn.noSettingCreated'));
       notifyListeners();
       throw result.exptData;
     }
     if (result.exptService != ExptServiceNoExpt()) {
-      globalState = ControllerStateError();
+      globalState = ControllerStateError(tr('msn.noSettingCreated'));
       notifyListeners();
       throw result.exptService;
     }
@@ -190,7 +190,7 @@ class ControllerHome extends ChangeNotifier {
       throw result.exception;
     }
     if (result.releases.isEmpty) {
-      controllerState = ControllerStateEmpty();
+      controllerState = ControllerStateEmpty(tr('msn.noSdk'));
       notifyListeners();
       return;
     }
@@ -300,11 +300,7 @@ class ControllerHome extends ChangeNotifier {
     }
     controllerState = ControllerStateLoaded();
     notifyListeners();
-    return result.releases.where((element) {
-      DateTime dt1 = DateTime.parse(element.date);
-      DateTime dt2 = DateTime.parse("2021-03-02T17:51:02.649408Z");
-      return element.channel == 'stable' && dt1.compareTo(dt2) > 0;
-    }).toList();
+    return result.releases;
   }
 
   Future<void> importReleases() async {
@@ -323,8 +319,6 @@ class ControllerHome extends ChangeNotifier {
     for (SdkRelease release in listSdkReleases) {
       if (release.state == SdkState.available) {
         await downloadSdkRelease(release);
-        //controllerState = ControllerStateLoaded();
-        //notifyListeners();
       }
     }
     loadListReleases();

@@ -4,8 +4,8 @@ import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
 import 'package:fegi/core/feature/presenter/widgets/loading_view_widget.dart';
 import 'package:fegi/core/helpers/date_helper.dart';
 import 'package:fegi/core/states/controller_state.dart';
-import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:ftcontrol/ftcontrol.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/controller_home.dart';
@@ -37,7 +37,6 @@ class _GetsdkTableWidgetState extends State<GetsdkTableWidget> {
   Widget build(BuildContext context) {
     final colorHead = Theme.of(context).colorScheme.inversePrimary;
     final colorBody = Theme.of(context).colorScheme.primaryContainer;
-
 
     return SizedBox(
       width: 600,
@@ -78,7 +77,10 @@ class _GetsdkTableWidgetState extends State<GetsdkTableWidget> {
                   ),
                 ControllerStateLoading() =>
                   LoadingViewWidget(info: controllerState.toString()),
-                _ => ErrorViewWidget(error: controllerState.toString()),
+                _ => FtcontrolView(
+                    text: controllerState.toString(),
+                    type: FtcontrolType.danger,
+                  ),
               };
             }),
       ),

@@ -17,6 +17,7 @@
     "finishApp": "End Application",
     "closeWindow": "You can minimize FEGI as system tray icon.\nAre you sure you want to close?",
     "noSdk": "You don't have any Sdk Releases installed.\n Use the button 'Get Sdk',\n to install one of the Flutter Sdk.",
+    "noSettingCreated": "It is not possible to create the settings, samething happens.",
     "infoCanNotRemove": "You can't remove the Sdk Release {version}, because it's installed."
   },
   "btn": {

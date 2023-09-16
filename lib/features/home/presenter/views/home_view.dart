@@ -4,10 +4,10 @@ import 'package:alertshow/alertshow.dart';
 import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fegi/core/constants.dart';
-import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
 import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
 import 'package:flutter/material.dart';
+import 'package:ftcontrol/ftcontrol.dart';
 import 'package:provider/provider.dart';
 import 'package:upgrader/upgrader.dart';
 import 'package:window_manager/window_manager.dart';
@@ -77,9 +77,10 @@ class _HomeViewState extends State<HomeView> with WindowListener {
           }
 
           if (controller.globalState != ControllerStateLoaded()) {
-            return const Scaffold(
-              body: ErrorViewWidget(
-                error: 'Cannot create settings config',
+            return Scaffold(
+              body: FtcontrolView(
+                text: controller.globalState.toString(),
+                type: FtcontrolType.danger,
               ),
             );
           }

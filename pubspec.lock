@@ -328,6 +328,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
+  ftcontrol:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: cbeae5325e756b66f11cc909c1f33836a1f70321
+      url: "https://github.com/gabrielgits/ftcontrol.git"
+    source: git
+    version: "0.1.1"
   glob:
     dependency: transitive
     description:

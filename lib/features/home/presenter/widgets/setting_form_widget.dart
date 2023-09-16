@@ -1,10 +1,10 @@
 import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
 import 'package:fegi/core/feature/presenter/widgets/loading_view_widget.dart';
 import 'package:fegi/core/states/controller_state.dart';
 import 'package:fegi/features/home/presenter/controllers/controller_home.dart';
 import 'package:flutter/material.dart';
+import 'package:ftcontrol/ftcontrol.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/form_lists.dart';
@@ -118,7 +118,10 @@ class _SettingsFormWidgetState extends State<SettingsFormWidget> {
                 ],
               ),
             ),
-          _ => ErrorViewWidget(error: globalState.toString()),
+          _ => FtcontrolView(
+              text: globalState.toString(),
+              type: FtcontrolType.warning,
+            ),
         };
       },
     );

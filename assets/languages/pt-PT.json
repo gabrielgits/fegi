@@ -17,6 +17,7 @@
     "finishApp": "Finalizar Aplicação",
     "closeWindow": "Você pode minimizar FEGI como ícone do sistema.\nTem certeza que deseja fechar?",
     "noSdk": "Você não tem nenhuma Sdk Releases instaladas.\nUse o botão 'Get Sdk',\n para instalar um dos Flutter Sdk.",
+    "noSettingCreated": "Não é possível criar as configurações, algo aconteceu.",
     "infoCanNotRemove": "Você não pode remover a Sdk Release {version}, porque ele está instalado."
   },
   "btn": {

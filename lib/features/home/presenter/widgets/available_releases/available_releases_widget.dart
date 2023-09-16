@@ -6,8 +6,8 @@ import 'package:fegi/core/feature/presenter/widgets/loading_view_widget.dart';
 import 'package:fegi/core/helpers/date_helper.dart';
 import 'package:fegi/core/helpers/open_url.dart';
 import 'package:fegi/core/states/controller_state.dart';
-import 'package:fegi/core/feature/presenter/widgets/error_view_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:ftcontrol/ftcontrol.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/controller_home.dart';
@@ -116,12 +116,15 @@ class _AvailableReleasesWidgetState extends State<AvailableReleasesWidget> {
                       ),
                     ControllerStateLoading() =>
                       LoadingViewWidget(info: selectors.state.toString()),
-                    ControllerStateEmpty() => Text(
-                        tr('msn.noSdk'),
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 18),
+                    ControllerStateEmpty() => FtcontrolView(
+                        text: tr('msn.noSdk'),
+                        //textAlign: TextAlign.center,
+                        //style: const TextStyle(fontSize: 18),
                       ),
-                    _ => ErrorViewWidget(error: selectors.state.toString()),
+                    _ => FtcontrolView(
+                        text: selectors.state.toString(),
+                        type: FtcontrolType.danger,
+                      ),
                   };
                 }),
           ),

@@ -3,10 +3,10 @@
     <channel>
         <title>FEGI</title>
         <item>
-            <title>Version 0.3.0</title>
-            <description>Initial setup automatically</description>
+            <title>Version 0.3.1</title>
+            <description>New component to show state information</description>
             <pubDate>15 Set 2023</pubDate>
-            <enclosure url="https://raw.githubusercontent.com/gabrielgits/fegi/main/setup/fegi-setup-win.exe" sparkle:version="0.3.0" sparkle:os="windows" />
+            <enclosure url="https://raw.githubusercontent.com/gabrielgits/fegi/main/setup/fegi-setup-win.exe" sparkle:version="0.3.1" sparkle:os="windows" />
         </item>
     </channel>
 </rss>
