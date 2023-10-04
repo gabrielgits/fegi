@@ -1,5 +1,5 @@
+import 'package:feds/feds.dart';
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
-import 'package:fegi/core/feature/infra/datasources/data_local.dart';
 import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 
@@ -9,7 +9,7 @@ import '../../domain/repositories/repository_local_settings.dart';
 import '../models/settings_model.dart';
 
 class RepositoryLocalSettingsImpl implements RepositoryLocalSettings {
-  final DataLocal datasource;
+  final FedsLocal datasource;
   final tableName = 'settings';
   final tableNameList = 'releases';
   const RepositoryLocalSettingsImpl(this.datasource);

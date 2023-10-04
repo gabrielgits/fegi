@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Fegi"
-#define MyAppVersion "0.3.1"
+#define MyAppVersion "0.3.2"
 #define MyAppPublisher "Gabriel Vieira"
 #define MyAppURL "https://www.gabrielvieira.ao"
 #define MyAppExeName "fegi.exe"

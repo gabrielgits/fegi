@@ -220,13 +220,13 @@ packages:
     source: hosted
     version: "7.0.0"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
-      sha256: "3866d67f93523161b643187af65f5ac08bc991a5bcdaf41a2d587fe4ccb49993"
+      sha256: "417e2a6f9d83ab396ec38ff4ea5da6c254da71e4db765ad737a42af6930140b7"
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.0"
+    version: "5.3.3"
   easy_localization:
     dependency: "direct main"
     description:
@@ -268,6 +268,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  feds:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: db2bfde8145a133904d28d36bbfb96408e99c4af
+      url: "https://github.com/gabrielgits/feds.git"
+    source: git
+    version: "0.1.2"
   ffi:
     dependency: transitive
     description:
@@ -642,13 +651,13 @@ packages:
     source: hosted
     version: "0.1.6"
   shared_preferences:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shared_preferences
-      sha256: "0344316c947ffeb3a529eac929e1978fcd37c26be4e8468628bac399365a3ca1"
+      sha256: b7f41bad7e521d205998772545de63ff4e6c97714775902c199353f8bf1511ac
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   shared_preferences_android:
     dependency: transitive
     description:

@@ -1,13 +1,13 @@
 
+import 'package:feds/feds.dart';
 import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
-import 'package:fegi/core/feature/infra/datasources/data_http.dart';
 import 'package:expt/expt.dart';
 import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 
 import '../../domain/repositories/repository_remote_release.dart';
 
 class RepositoryRemoteReleaseImpl implements RepositoryRemoteRelease {
-  final DataHttp datasource;
+  final FedsRest datasource;
   const RepositoryRemoteReleaseImpl(this.datasource);
 
   @override

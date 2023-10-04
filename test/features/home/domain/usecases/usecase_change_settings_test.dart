@@ -1,5 +1,5 @@
 import 'package:expt/expt.dart';
-import 'package:fegi/core/feature/infra/datasources/data_local.dart';
+import 'package:feds/feds.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_settings.dart';
 import 'package:fegi/features/home/domain/usecases/usecase_change_settings.dart';
 import 'package:fegi/features/home/infra/repositories/repository_local_settings_impl.dart';
@@ -9,11 +9,11 @@ import 'package:mockito/mockito.dart';
 
 import '../../infra/models/mock_settings_model.dart';
 
-@GenerateNiceMocks([MockSpec<DataLocal>()])
+@GenerateNiceMocks([MockSpec<FedsLocal>()])
 import 'usecase_change_settings_test.mocks.dart';
 
 void main() {
-  final mockDataLocal = MockDataLocal();
+  final mockDataLocal = MockFedsLocal();
   late RepositoryLocalSettings repositoryLocal;
   late UsecaseChangeSettings usecaseChangeSettings;
 

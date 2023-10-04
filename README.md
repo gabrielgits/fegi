@@ -107,8 +107,7 @@ This APP has the following dependencies:
 - [provider](https://pub.dev/packages/provider): A wrapper around InheritedWidget to make them easier to use and more reusable.
 
 ### networking and storage:
-- [dio](https://pub.dev/packages/dio): A powerful HTTP client which FormData, request cancellation, file uploading/downloading, etc.
-- [shared_preferences](https://pub.dev/packages/shared_preferences): Storing data quickly.
+- [feds](https://github.com/gabrielgits/feds.git): Flutter Package to work with external data source.
 - [path_provider](https://pub.dev/packages/path_provider): Finding commonly used locations on the filesystem.
 - [upgrader](https://pub.dev/packages/upgrader): Package for prompting users to upgrade when there is a newer version of the app in the store.
 

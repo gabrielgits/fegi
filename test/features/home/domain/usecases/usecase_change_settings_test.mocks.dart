@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:fegi/core/feature/infra/datasources/data_local.dart' as _i2;
+import 'package:feds/src/infra/feds_local.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -19,10 +19,10 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [DataLocal].
+/// A class which mocks [FedsLocal].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDataLocal extends _i1.Mock implements _i2.DataLocal {
+class MockFedsLocal extends _i1.Mock implements _i2.FedsLocal {
   @override
   _i3.Future<int> save({
     required Map<String, dynamic>? item,

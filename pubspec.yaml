@@ -2,7 +2,7 @@ name: fegi
 description: Flutter Easy GUI Installer
 homepage: https://github.com/gabrielgits/fegi.git
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 0.3.1
+version: 0.3.2
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
@@ -35,8 +35,8 @@ dependencies:
   provider: ^6.0.5
 
   #networking and storage:
-  dio: ^5.3.0
-  shared_preferences: ^2.2.0
+  feds:
+    git: https://github.com/gabrielgits/feds.git
   path_provider: ^2.0.15
   upgrader: ^8.1.0
 

@@ -1,3 +1,4 @@
+import 'package:feds/feds.dart';
 import 'package:provider/provider.dart';
 
 import '../features/home/domain/repositories/repository_local_release.dart';
@@ -24,21 +25,17 @@ import '../features/home/infra/repositories/repository_remote_release_impl.dart'
 import '../features/home/presenter/controllers/controller_home.dart';
 import '../features/home/domain/repositories/repository_local_settings.dart';
 import '../features/home/domain/usecases/usecase_create_initial_settings.dart';
-import 'feature/external/datasources/data_http_dio.dart';
-import 'feature/external/datasources/data_local_shared_pref.dart';
 import 'feature/external/services/service_compress_archive_io.dart';
 import 'feature/external/services/service_file.dart';
 import 'feature/external/services/service_os_win.dart';
-import 'feature/infra/datasources/data_http.dart';
-import 'feature/infra/datasources/data_local.dart';
 import 'feature/infra/services/service_compress.dart';
 import 'feature/infra/services/service_file.dart';
 import 'feature/infra/services/service_os.dart';
 
 final providersApp = [
   ///  core providers
-  Provider<DataHttp>(create: (context) => DataHttpDio()),
-  Provider<DataLocal>(create: (_) => DataLocalSharedPref()),
+  Provider<FedsRest>(create: (context) => FedsRestDio()),
+  Provider<FedsLocal>(create: (_) => FedsLocalSharedPref()),
   Provider<ServiceOs>(create: (_) => ServiceOsWin()),
   Provider<ServiceFile>(create: (_) => ServiceFileImpl()),
   Provider<ServiceCompress>(create: (_) => ServiceCompressArchiveIo()),

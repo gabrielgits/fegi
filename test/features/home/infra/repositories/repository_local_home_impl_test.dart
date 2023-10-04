@@ -1,5 +1,5 @@
 import 'package:expt/expt.dart';
-import 'package:fegi/core/feature/infra/datasources/data_local.dart';
+import 'package:feds/feds.dart';
 import 'package:fegi/core/states/sdk_state.dart';
 import 'package:fegi/features/home/domain/repositories/repository_local_release.dart';
 import 'package:fegi/features/home/infra/repositories/repository_local_release_impl.dart';
@@ -9,11 +9,11 @@ import 'package:mockito/mockito.dart';
 
 import '../../../../core/infra/models/mock_models_sdkrelease.dart';
 
-@GenerateNiceMocks([MockSpec<DataLocal>()])
+@GenerateNiceMocks([MockSpec<FedsLocal>()])
 import 'repository_local_home_impl_test.mocks.dart';
 
 void main() {
-  final mockDataLocal = MockDataLocal();
+  final mockDataLocal = MockFedsLocal();
   late RepositoryLocalRelease repository;
 
   setUp(() {

@@ -1,5 +1,5 @@
 import 'package:expt/expt.dart';
-import 'package:fegi/core/feature/infra/datasources/data_http.dart';
+import 'package:feds/feds.dart';
 import 'package:fegi/features/home/domain/repositories/repository_remote_release.dart';
 import 'package:fegi/features/home/infra/repositories/repository_remote_release_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -8,11 +8,11 @@ import 'package:mockito/mockito.dart';
 
 import '../../../../core/infra/models/mock_models_sdkrelease.dart';
 
-@GenerateNiceMocks([MockSpec<DataHttp>()])
+@GenerateNiceMocks([MockSpec<FedsRest>()])
 import 'repository_remote_home_impl_test.mocks.dart';
 
 void main() {
-  final mockDataHttp = MockDataHttp();
+  final mockDataHttp = MockFedsRest();
   late RepositoryRemoteRelease repository;
 
   setUp(() {

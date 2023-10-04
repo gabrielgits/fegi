@@ -9,7 +9,6 @@ import 'core/constants.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  // Add this line to override the default close handler
   await windowManager.ensureInitialized();
 
   if (!App.debug) {

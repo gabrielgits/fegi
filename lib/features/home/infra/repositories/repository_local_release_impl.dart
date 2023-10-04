@@ -1,12 +1,12 @@
 import 'package:expt/expt.dart';
-import 'package:fegi/core/feature/infra/datasources/data_local.dart';
+import 'package:feds/feds.dart';
+import 'package:fegi/core/feature/domain/entities/sdk_release.dart';
+import 'package:fegi/core/feature/infra/models/sdk_release_model.dart';
 
-import '../../../../core/feature/domain/entities/sdk_release.dart';
 import '../../domain/repositories/repository_local_release.dart';
-import '../../../../core/feature/infra/models/sdk_release_model.dart';
 
 class RepositoryLocalReleaseImpl implements RepositoryLocalRelease {
-  final DataLocal datasource;
+  final FedsLocal datasource;
   final tableSettings = 'settings';
   final tableListSdkReleases = 'releases';
   final tableGlobalSdkRelease = 'global_release';
