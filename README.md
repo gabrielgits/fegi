@@ -60,6 +60,7 @@ Click in Get SDK to start.
 - ✅ Multi language.
 - ⛔ Multi platforms.
 - ✅ Run as system tray.
+- ✅ Auto verify update.
 
 
 
