@@ -57,9 +57,9 @@ Click in Get SDK to start.
 - ✴️ Dectect flutter project.
 - ✴️ Run flutter project.
 - ⛔ Test flutter project.
-- ✴️ Multi language.
+- ✅ Multi language.
 - ⛔ Multi platforms.
-- ✴️ Run as system tray.
+- ✅ Run as system tray.
 
 
 
